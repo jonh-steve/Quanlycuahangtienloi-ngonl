@@ -1,0 +1,5631 @@
+--- Folder Structure ---
+[.qodo]
+00_MasterScript.sql
+01_CreateDatabase.sql
+02_CreateAccountTables.sql
+03_CreateEmployeeTables.sql
+04_CreateProductCategoryTables.sql
+05_CreateSupplierInventoryTables.sql
+06_CreateOrderTables.sql
+07_CreateReportingTables.sql
+08_CreateSystemTables.sql
+09_StoredProcedures_Account.sql
+10_StoredProcedures_Product.sql
+11_StoredProcedures_Order.sql
+12_StoredProcedures_Inventory.sql
+13_StoredProcedures_Reporting.sql
+14_StoredProcedures_Category.sql
+15_StoredProcedures_Supplier.sql
+16_CreateDatabaseViews.sql
+17_StoredProcedures_Employee.sql
+18_StoredProcedures_Customer.sql
+19_StoredProcedures_Expense.sql
+20_StoredProcedures_System.sql
+21_CreateDatabaseTriggers.sql
+22_CreateDatabaseIndexes.sql
+23_BackupRestoreProcedures.sql
+[docs]
+    └── .project_structure_ignore
+readme.md
+
+--- File Contents ---
+
+--- File: 00_MasterScript.sql ---
+-- Master Script for QuanLyCuaHangTienLoi Database
+-- This script will execute all database creation scripts in the correct order
+
+PRINT '===== STARTING DATABASE CREATION PROCESS =====';
+PRINT 'Execution time: ' + CONVERT(VARCHAR, GETDATE(), 120);
+PRINT '';
+
+-- Step 1: Create Database
+PRINT 'Step 1: Creating Database...';
+:r "01_CreateDatabase.sql"
+PRINT 'Database created successfully.';
+PRINT '';
+
+-- Step 2: Create Account Tables
+PRINT 'Step 2: Creating Account Tables...';
+:r "02_CreateAccountTables.sql"
+PRINT 'Account tables created successfully.';
+PRINT '';
+
+-- Step 3: Create Employee Tables
+PRINT 'Step 3: Creating Employee Tables...';
+:r "03_CreateEmployeeTables.sql"
+PRINT 'Employee tables created successfully.';
+PRINT '';
+
+-- Step 4: Create Product and Category Tables
+PRINT 'Step 4: Creating Product and Category Tables...';
+:r "04_CreateProductCategoryTables.sql"
+PRINT 'Product and Category tables created successfully.';
+PRINT '';
+
+-- Step 5: Create Supplier and Inventory Tables
+PRINT 'Step 5: Creating Supplier and Inventory Tables...';
+:r "05_CreateSupplierInventoryTables.sql"
+PRINT 'Supplier and Inventory tables created successfully.';
+PRINT '';
+
+-- Step 6: Create Order Tables
+PRINT 'Step 6: Creating Order Tables...';
+:r "06_CreateOrderTables.sql"
+PRINT 'Order tables created successfully.';
+PRINT '';
+
+-- Step 7: Create Reporting Tables
+PRINT 'Step 7: Creating Reporting Tables...';
+:r "07_CreateReportingTables.sql"
+PRINT 'Reporting tables created successfully.';
+PRINT '';
+
+-- Step 8: Create System Tables
+PRINT 'Step 8: Creating System Tables...';
+:r "08_CreateSystemTables.sql"
+PRINT 'System tables created successfully.';
+PRINT '';
+
+-- Step 9: Create Account Management Stored Procedures
+PRINT 'Step 9: Creating Account Management Stored Procedures...';
+:r "09_StoredProcedures_Account.sql"
+PRINT 'Account management stored procedures created successfully.';
+PRINT '';
+
+-- Step 10: Create Product Management Stored Procedures
+PRINT 'Step 10: Creating Product Management Stored Procedures...';
+:r "10_StoredProcedures_Product.sql"
+PRINT 'Product management stored procedures created successfully.';
+PRINT '';
+
+-- Step 11: Create Order Management Stored Procedures
+PRINT 'Step 11: Creating Order Management Stored Procedures...';
+:r "11_StoredProcedures_Order.sql"
+PRINT 'Order management stored procedures created successfully.';
+PRINT '';
+
+-- Step 12: Create Inventory Management Stored Procedures
+PRINT 'Step 12: Creating Inventory Management Stored Procedures...';
+:r "12_StoredProcedures_Inventory.sql"
+PRINT 'Inventory management stored procedures created successfully.';
+PRINT '';
+
+-- Step 13: Create Reporting Stored Procedures
+PRINT 'Step 13: Creating Reporting Stored Procedures...';
+:r "13_StoredProcedures_Reporting.sql"
+PRINT 'Reporting stored procedures created successfully.';
+PRINT '';
+
+-- Step 14: Create Category Management Stored Procedures
+PRINT 'Step 14: Creating Category Management Stored Procedures...';
+:r "14_StoredProcedures_Category.sql"
+PRINT 'Category management stored procedures created successfully.';
+PRINT '';
+
+-- Step 15: Create Supplier Management Stored Procedures
+PRINT 'Step 15: Creating Supplier Management Stored Procedures...';
+:r "15_StoredProcedures_Supplier.sql"
+PRINT 'Supplier management stored procedures created successfully.';
+PRINT '';
+
+-- Step 16: Create Database Views
+PRINT 'Step 16: Creating Database Views...';
+:r "16_CreateDatabaseViews.sql"
+PRINT 'Database views created successfully.';
+PRINT '';
+
+-- Step 17: Create Employee Managsement Stored Procedures
+PRINT 'Step 17: Creating Employee Management Stored Procedures...';
+:r "17_StoredProcedures_Employee.sql"
+PRINT 'Employee management stored procedures created successfully.';
+PRINT '';
+
+
+
+-- Step 19: Create Expense Management Stored Procedures
+PRINT 'Step 19: Creating Expense Management Stored Procedures...';
+:r "19_StoredProcedures_Expense.sql"
+PRINT 'Expense management stored procedures created successfully.';
+PRINT '';
+
+-- Step 20: Create System Configuration Stored Procedures
+PRINT 'Step 20: Creating System Configuration Stored Procedures...';
+:r "20_StoredProcedures_System.sql"
+PRINT 'System configuration stored procedures created successfully.';
+PRINT '';
+
+-- Step 21: Create Database Triggers
+PRINT 'Step 21: Creating Database Triggers...';
+:r "21_CreateDatabaseTriggers.sql"
+PRINT 'Database triggers created successfully.';
+PRINT '';
+
+-- Step 22: Create Database Indexes
+PRINT 'Step 22: Creating Database Indexes...';
+:r "22_CreateDatabaseIndexes.sql"
+PRINT 'Database indexes created successfully.';
+PRINT '';
+
+-- Step 23: Create Backup and Restore Procedures
+PRINT 'Step 23: Creating Backup and Restore Procedures...';
+:r "23_BackupRestoreProcedures.sql"
+PRINT 'Backup and restore procedures created successfully.';
+PRINT '';
+
+PRINT '===== DATABASE CREATION COMPLETED SUCCESSFULLY =====';
+PRINT 'Completion time: ' + CONVERT(VARCHAR, GETDATE(), 120);
+PRINT '';
+PRINT 'The QuanLyCuaHangTienLoi database has been created and is ready to use.';
+PRINT 'Default admin account: username = admin, password = Admin@123';
+PRINT '';
+PRINT 'Please make sure to change the default admin password after first login.';
+
+--- File: 01_CreateDatabase.sql ---
+-- Create the database
+CREATE DATABASE QuanLyCuaHangTienLoi;
+GO
+
+-- Use the database
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Create a schema for the application
+CREATE SCHEMA app;
+GO
+
+PRINT 'Database QuanLyCuaHangTienLoi created successfully';
+
+--- File: 02_CreateAccountTables.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Create Role table
+CREATE TABLE app.Role (
+    RoleID INT PRIMARY KEY IDENTITY(1,1),
+    RoleName NVARCHAR(50) NOT NULL,
+    Description NVARCHAR(200),
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    IsActive BIT DEFAULT 1
+);
+
+-- Create Account table
+CREATE TABLE app.Account (
+    AccountID INT PRIMARY KEY IDENTITY(1,1),
+    Username NVARCHAR(50) NOT NULL UNIQUE,
+    PasswordHash NVARCHAR(128) NOT NULL,
+    PasswordSalt NVARCHAR(128) NOT NULL,
+    Email NVARCHAR(100),
+    RoleID INT FOREIGN KEY REFERENCES app.Role(RoleID),
+    LastLogin DATETIME,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    ModifiedDate DATETIME,
+    IsActive BIT DEFAULT 1
+);
+
+-- Create AccountSession table for tracking login sessions
+CREATE TABLE app.AccountSession (
+    SessionID INT PRIMARY KEY IDENTITY(1,1),
+    AccountID INT FOREIGN KEY REFERENCES app.Account(AccountID),
+    SessionToken NVARCHAR(128) NOT NULL,
+    IPAddress NVARCHAR(50),
+    LoginTime DATETIME DEFAULT GETDATE(),
+    ExpiryTime DATETIME,
+    IsActive BIT DEFAULT 1
+);
+
+-- Insert default roles
+INSERT INTO app.Role (RoleName, Description)
+VALUES 
+    ('Admin', N'Quản trị viên hệ thống'),
+    ('Manager', N'Quản lý cửa hàng'),
+    ('Cashier', N'Nhân viên thu ngân'),
+    ('Inventory', N'Nhân viên kho');
+
+-- Create default admin account (password: Admin@123)
+-- Note: In a real application, you would generate proper salt and hash
+INSERT INTO app.Account (Username, PasswordHash, PasswordSalt, Email, RoleID)
+VALUES ('admin', 'E1ADC3949BA59ABBE56E057F20F883E', 'ABCDEF123456', 'admin@store.com', 1);
+
+PRINT 'Account tables created successfully';
+
+--- File: 03_CreateEmployeeTables.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Create Employee table
+CREATE TABLE app.Employee (
+    EmployeeID INT PRIMARY KEY IDENTITY(1,1),
+    AccountID INT FOREIGN KEY REFERENCES app.Account(AccountID),
+    FirstName NVARCHAR(50) NOT NULL,
+    LastName NVARCHAR(50) NOT NULL,
+    FullName AS (FirstName + ' ' + LastName) PERSISTED,
+    Gender NVARCHAR(10),
+    DateOfBirth DATE,
+    PhoneNumber NVARCHAR(20),
+    Address NVARCHAR(200),
+    IdentityCard NVARCHAR(20),
+    Position NVARCHAR(50),
+    HireDate DATE DEFAULT GETDATE(),
+    Salary DECIMAL(18, 2),
+    IsActive BIT DEFAULT 1,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    ModifiedDate DATETIME
+);
+
+-- Create EmployeeSchedule table
+CREATE TABLE app.EmployeeSchedule (
+    ScheduleID INT PRIMARY KEY IDENTITY(1,1),
+    EmployeeID INT FOREIGN KEY REFERENCES app.Employee(EmployeeID),
+    WorkDate DATE NOT NULL,
+    StartTime TIME NOT NULL,
+    EndTime TIME NOT NULL,
+    CreatedBy INT,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    ModifiedDate DATETIME
+);
+
+-- Create EmployeeAttendance table
+CREATE TABLE app.EmployeeAttendance (
+    AttendanceID INT PRIMARY KEY IDENTITY(1,1),
+    EmployeeID INT FOREIGN KEY REFERENCES app.Employee(EmployeeID),
+    AttendanceDate DATE NOT NULL,
+    TimeIn TIME,
+    TimeOut TIME,
+    Status NVARCHAR(20), -- Present, Absent, Late, etc.
+    Note NVARCHAR(200),
+    CreatedDate DATETIME DEFAULT GETDATE()
+);
+
+PRINT 'Employee tables created successfully';
+
+--- File: 04_CreateProductCategoryTables.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Create Category table
+CREATE TABLE app.Category (
+    CategoryID INT PRIMARY KEY IDENTITY(1,1),
+    CategoryName NVARCHAR(100) NOT NULL,
+    Description NVARCHAR(500),
+    ParentCategoryID INT FOREIGN KEY REFERENCES app.Category(CategoryID),
+    DisplayOrder INT DEFAULT 0,
+    IsActive BIT DEFAULT 1,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    ModifiedDate DATETIME
+);
+
+-- Create Product table
+CREATE TABLE app.Product (
+    ProductID INT PRIMARY KEY IDENTITY(1,1),
+    ProductCode NVARCHAR(20) NOT NULL UNIQUE,
+    Barcode NVARCHAR(50),
+    ProductName NVARCHAR(200) NOT NULL,
+    CategoryID INT FOREIGN KEY REFERENCES app.Category(CategoryID),
+    Description NVARCHAR(500),
+    CostPrice DECIMAL(18, 2) NOT NULL,
+    SellPrice DECIMAL(18, 2) NOT NULL,
+    Unit NVARCHAR(20),
+    ImagePath NVARCHAR(255),
+    MinimumStock INT DEFAULT 0,
+    IsActive BIT DEFAULT 1,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    ModifiedDate DATETIME
+);
+
+-- Create ProductImage table for multiple images per product
+CREATE TABLE app.ProductImage (
+    ImageID INT PRIMARY KEY IDENTITY(1,1),
+    ProductID INT FOREIGN KEY REFERENCES app.Product(ProductID),
+    ImagePath NVARCHAR(255) NOT NULL,
+    DisplayOrder INT DEFAULT 0,
+    IsDefault BIT DEFAULT 0,
+    CreatedDate DATETIME DEFAULT GETDATE()
+);
+
+-- Create ProductPrice table for price history
+CREATE TABLE app.ProductPrice (
+    PriceID INT PRIMARY KEY IDENTITY(1,1),
+    ProductID INT FOREIGN KEY REFERENCES app.Product(ProductID),
+    CostPrice DECIMAL(18, 2) NOT NULL,
+    SellPrice DECIMAL(18, 2) NOT NULL,
+    EffectiveDate DATETIME NOT NULL,
+    EndDate DATETIME,
+    CreatedBy INT,
+    CreatedDate DATETIME DEFAULT GETDATE()
+);
+
+-- Insert some default categories
+INSERT INTO app.Category (CategoryName, Description)
+VALUES 
+    (N'Đồ uống', N'Nước giải khát, nước đóng chai, sữa...'),
+    (N'Thực phẩm', N'Các loại thực phẩm đóng gói'),
+    (N'Bánh kẹo', N'Các loại bánh, kẹo, snack'),
+    (N'Đồ dùng cá nhân', N'Các sản phẩm chăm sóc cá nhân'),
+    (N'Đồ gia dụng', N'Các sản phẩm dùng trong gia đình');
+
+PRINT 'Product and Category tables created successfully';
+
+--- File: 05_CreateSupplierInventoryTables.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Create Supplier table
+CREATE TABLE app.Supplier (
+    SupplierID INT PRIMARY KEY IDENTITY(1,1),
+    SupplierName NVARCHAR(200) NOT NULL,
+    ContactPerson NVARCHAR(100),
+    PhoneNumber NVARCHAR(20),
+    Email NVARCHAR(100),
+    Address NVARCHAR(200),
+    TaxCode NVARCHAR(50),
+    IsActive BIT DEFAULT 1,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    ModifiedDate DATETIME
+);
+
+-- Create Inventory table
+CREATE TABLE app.Inventory (
+    InventoryID INT PRIMARY KEY IDENTITY(1,1),
+    ProductID INT FOREIGN KEY REFERENCES app.Product(ProductID),
+    Quantity INT NOT NULL DEFAULT 0,
+    LastUpdated DATETIME DEFAULT GETDATE()
+);
+
+-- Create InventoryTransaction table for tracking inventory changes
+CREATE TABLE app.InventoryTransaction (
+    TransactionID INT PRIMARY KEY IDENTITY(1,1),
+    ProductID INT FOREIGN KEY REFERENCES app.Product(ProductID),
+    TransactionType NVARCHAR(20) NOT NULL, -- Import, Export, Adjustment
+    Quantity INT NOT NULL,
+    PreviousQuantity INT NOT NULL,
+    CurrentQuantity INT NOT NULL,
+    UnitPrice DECIMAL(18, 2),
+    TotalAmount DECIMAL(18, 2),
+    ReferenceID INT, -- OrderID or ImportID
+    ReferenceType NVARCHAR(20), -- Order, Import
+    Note NVARCHAR(200),
+    TransactionDate DATETIME DEFAULT GETDATE(),
+    CreatedBy INT
+);
+
+-- Create Import table for tracking product imports
+CREATE TABLE app.Import (
+    ImportID INT PRIMARY KEY IDENTITY(1,1),
+    SupplierID INT FOREIGN KEY REFERENCES app.Supplier(SupplierID),
+    ImportCode NVARCHAR(20) NOT NULL UNIQUE,
+    ImportDate DATETIME DEFAULT GETDATE(),
+    TotalAmount DECIMAL(18, 2) NOT NULL DEFAULT 0,
+    Status NVARCHAR(20) DEFAULT 'Pending', -- Pending, Completed, Cancelled
+    Note NVARCHAR(500),
+    CreatedBy INT,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    ModifiedDate DATETIME
+);
+
+-- Create ImportDetail table
+CREATE TABLE app.ImportDetail (
+    ImportDetailID INT PRIMARY KEY IDENTITY(1,1),
+    ImportID INT FOREIGN KEY REFERENCES app.Import(ImportID),
+    ProductID INT FOREIGN KEY REFERENCES app.Product(ProductID),
+    Quantity INT NOT NULL,
+    UnitPrice DECIMAL(18, 2) NOT NULL,
+    TotalPrice DECIMAL(18, 2) NOT NULL,
+    ExpiryDate DATE,
+    BatchNumber NVARCHAR(50),
+    Note NVARCHAR(200)
+);
+
+-- Insert some default suppliers
+INSERT INTO app.Supplier (SupplierName, ContactPerson, PhoneNumber, Email, Address)
+VALUES 
+    (N'Công ty TNHH Thực phẩm ABC', N'Nguyễn Văn A', '0901234567', 'contact@abc.com', N'123 Đường Lê Lợi, Quận 1, TP.HCM'),
+    (N'Công ty CP Đồ uống XYZ', N'Trần Thị B', '0912345678', 'info@xyz.com', N'456 Đường Nguyễn Huệ, Quận 1, TP.HCM'),
+    (N'Nhà phân phối Hàng tiêu dùng DEF', N'Lê Văn C', '0923456789', 'sales@def.com', N'789 Đường Cách Mạng Tháng 8, Quận 3, TP.HCM');
+
+PRINT 'Supplier and Inventory tables created successfully';
+
+--- File: 06_CreateOrderTables.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Create Customer table
+CREATE TABLE app.Customer (
+    CustomerID INT PRIMARY KEY IDENTITY(1,1),
+    CustomerName NVARCHAR(100),
+    PhoneNumber NVARCHAR(20),
+    Email NVARCHAR(100),
+    Address NVARCHAR(200),
+    MembershipLevel NVARCHAR(20) DEFAULT 'Regular', -- Regular, Silver, Gold, etc.
+    Points INT DEFAULT 0,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    ModifiedDate DATETIME
+);
+
+-- Create PaymentMethod table
+CREATE TABLE app.PaymentMethod (
+    PaymentMethodID INT PRIMARY KEY IDENTITY(1,1),
+    MethodName NVARCHAR(50) NOT NULL,
+    Description NVARCHAR(200),
+    IsActive BIT DEFAULT 1
+);
+
+-- Create Order table
+CREATE TABLE app.Order (
+    OrderID INT PRIMARY KEY IDENTITY(1,1),
+    OrderCode NVARCHAR(20) NOT NULL UNIQUE,
+    CustomerID INT FOREIGN KEY REFERENCES app.Customer(CustomerID),
+    EmployeeID INT FOREIGN KEY REFERENCES app.Employee(EmployeeID),
+    OrderDate DATETIME DEFAULT GETDATE(),
+    TotalAmount DECIMAL(18, 2) NOT NULL DEFAULT 0,
+    Discount DECIMAL(18, 2) DEFAULT 0,
+    Tax DECIMAL(18, 2) DEFAULT 0,
+    FinalAmount DECIMAL(18, 2) NOT NULL DEFAULT 0,
+    PaymentMethodID INT FOREIGN KEY REFERENCES app.PaymentMethod(PaymentMethodID),
+    PaymentStatus NVARCHAR(20) DEFAULT 'Pending', -- Pending, Paid, Cancelled
+    Note NVARCHAR(500),
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    ModifiedDate DATETIME
+);
+
+-- Create OrderDetail table
+CREATE TABLE app.OrderDetail (
+    OrderDetailID INT PRIMARY KEY IDENTITY(1,1),
+    OrderID INT FOREIGN KEY REFERENCES app.Order(OrderID),
+    ProductID INT FOREIGN KEY REFERENCES app.Product(ProductID),
+    Quantity INT NOT NULL,
+    UnitPrice DECIMAL(18, 2) NOT NULL,
+    Discount DECIMAL(18, 2) DEFAULT 0,
+    TotalPrice DECIMAL(18, 2) NOT NULL,
+    Note NVARCHAR(200)
+);
+
+-- Create Promotion table
+CREATE TABLE app.Promotion (
+    PromotionID INT PRIMARY KEY IDENTITY(1,1),
+    PromotionName NVARCHAR(100) NOT NULL,
+    Description NVARCHAR(500),
+    DiscountType NVARCHAR(20) NOT NULL, -- Percentage, FixedAmount
+    DiscountValue DECIMAL(18, 2) NOT NULL,
+    StartDate DATETIME NOT NULL,
+    EndDate DATETIME NOT NULL,
+    MinimumOrderAmount DECIMAL(18, 2) DEFAULT 0,
+    IsActive BIT DEFAULT 1,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    ModifiedDate DATETIME
+);
+
+-- Create PromotionProduct table for product-specific promotions
+CREATE TABLE app.PromotionProduct (
+    PromotionProductID INT PRIMARY KEY IDENTITY(1,1),
+    PromotionID INT FOREIGN KEY REFERENCES app.Promotion(PromotionID),
+    ProductID INT FOREIGN KEY REFERENCES app.Product(ProductID),
+    CategoryID INT FOREIGN KEY REFERENCES app.Category(CategoryID)
+);
+
+-- Insert default payment methods
+INSERT INTO app.PaymentMethod (MethodName, Description)
+VALUES 
+    (N'Tiền mặt', N'Thanh toán bằng tiền mặt'),
+    (N'Thẻ ngân hàng', N'Thanh toán bằng thẻ ATM/Visa/Master'),
+    (N'Ví điện tử', N'Thanh toán qua ví điện tử (Momo, ZaloPay, ...)'),
+    (N'Chuyển khoản', N'Thanh toán bằng chuyển khoản ngân hàng');
+
+PRINT 'Order tables created successfully';
+
+--- File: 07_CreateReportingTables.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Create DailySales table for sales reporting
+CREATE TABLE app.DailySales (
+    DailySalesID INT PRIMARY KEY IDENTITY(1,1),
+    SalesDate DATE NOT NULL,
+    TotalOrders INT NOT NULL DEFAULT 0,
+    TotalSales DECIMAL(18, 2) NOT NULL DEFAULT 0,
+    TotalCost DECIMAL(18, 2) NOT NULL DEFAULT 0,
+    GrossProfit DECIMAL(18, 2) NOT NULL DEFAULT 0,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    UpdatedDate DATETIME
+);
+
+-- Create ProductSales table for product-specific sales reporting
+CREATE TABLE app.ProductSales (
+    ProductSalesID INT PRIMARY KEY IDENTITY(1,1),
+    ProductID INT FOREIGN KEY REFERENCES app.Product(ProductID),
+    SalesDate DATE NOT NULL,
+    QuantitySold INT NOT NULL DEFAULT 0,
+    TotalSales DECIMAL(18, 2) NOT NULL DEFAULT 0,
+    TotalCost DECIMAL(18, 2) NOT NULL DEFAULT 0,
+    Profit DECIMAL(18, 2) NOT NULL DEFAULT 0,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    UpdatedDate DATETIME
+);
+
+-- Create CategorySales table for category-specific sales reporting
+CREATE TABLE app.CategorySales (
+    CategorySalesID INT PRIMARY KEY IDENTITY(1,1),
+    CategoryID INT FOREIGN KEY REFERENCES app.Category(CategoryID),
+    SalesDate DATE NOT NULL,
+    QuantitySold INT NOT NULL DEFAULT 0,
+    TotalSales DECIMAL(18, 2) NOT NULL DEFAULT 0,
+    TotalCost DECIMAL(18, 2) NOT NULL DEFAULT 0,
+    Profit DECIMAL(18, 2) NOT NULL DEFAULT 0,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    UpdatedDate DATETIME
+);
+
+-- Create ExpenseType table
+CREATE TABLE app.ExpenseType (
+    ExpenseTypeID INT PRIMARY KEY IDENTITY(1,1),
+    TypeName NVARCHAR(100) NOT NULL,
+    Description NVARCHAR(200),
+    IsActive BIT DEFAULT 1
+);
+
+-- Create Expense table for tracking expenses
+CREATE TABLE app.Expense (
+    ExpenseID INT PRIMARY KEY IDENTITY(1,1),
+    ExpenseTypeID INT FOREIGN KEY REFERENCES app.ExpenseType(ExpenseTypeID),
+    Amount DECIMAL(18, 2) NOT NULL,
+    ExpenseDate DATE NOT NULL,
+    Description NVARCHAR(500),
+    EmployeeID INT FOREIGN KEY REFERENCES app.Employee(EmployeeID),
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    ModifiedDate DATETIME
+);
+
+-- Insert default expense types
+INSERT INTO app.ExpenseType (TypeName, Description)
+VALUES 
+    (N'Tiền thuê mặt bằng', N'Chi phí thuê cửa hàng'),
+    (N'Tiền điện', N'Chi phí điện hàng tháng'),
+    (N'Tiền nước', N'Chi phí nước hàng tháng'),
+    (N'Lương nhân viên', N'Chi phí lương nhân viên'),
+    (N'Vận chuyển', N'Chi phí vận chuyển hàng hóa'),
+    (N'Khác', N'Các chi phí khác');
+
+PRINT 'Reporting tables created successfully';
+
+--- File: 08_CreateSystemTables.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Create SystemConfig table
+CREATE TABLE app.SystemConfig (
+    ConfigID INT PRIMARY KEY IDENTITY(1,1),
+    ConfigKey NVARCHAR(50) NOT NULL UNIQUE,
+    ConfigValue NVARCHAR(MAX),
+    Description NVARCHAR(200),
+    DataType NVARCHAR(20), -- String, Number, Boolean, DateTime
+    IsReadOnly BIT DEFAULT 0,
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    ModifiedDate DATETIME
+);
+
+-- Create SystemLog table
+CREATE TABLE app.SystemLog (
+    LogID INT PRIMARY KEY IDENTITY(1,1),
+    LogLevel NVARCHAR(20) NOT NULL, -- Info, Warning, Error, Debug
+    Message NVARCHAR(MAX) NOT NULL,
+    Source NVARCHAR(100),
+    Exception NVARCHAR(MAX),
+    StackTrace NVARCHAR(MAX),
+    AccountID INT,
+    IPAddress NVARCHAR(50),
+    LogDate DATETIME DEFAULT GETDATE()
+);
+
+-- Create ActivityLog table
+CREATE TABLE app.ActivityLog (
+    ActivityID INT PRIMARY KEY IDENTITY(1,1),
+    AccountID INT FOREIGN KEY REFERENCES app.Account(AccountID),
+    ActivityType NVARCHAR(50) NOT NULL, -- Login, Logout, Create, Update, Delete, etc.
+    EntityType NVARCHAR(50), -- Product, Order, Customer, etc.
+    EntityID INT,
+    Description NVARCHAR(500),
+    OldValue NVARCHAR(MAX),
+    NewValue NVARCHAR(MAX),
+    IPAddress NVARCHAR(50),
+    ActivityDate DATETIME DEFAULT GETDATE()
+);
+
+-- Create Backup table
+CREATE TABLE app.Backup (
+    BackupID INT PRIMARY KEY IDENTITY(1,1),
+    BackupName NVARCHAR(100) NOT NULL,
+    BackupPath NVARCHAR(255) NOT NULL,
+    BackupSize BIGINT,
+    BackupDate DATETIME DEFAULT GETDATE(),
+    AccountID INT FOREIGN KEY REFERENCES app.Account(AccountID),
+    Status NVARCHAR(20), -- Success, Failed
+    Note NVARCHAR(500)
+);
+
+-- Insert default system configurations
+INSERT INTO app.SystemConfig (ConfigKey, ConfigValue, Description, DataType)
+VALUES 
+    ('StoreName', N'Cửa hàng tiện lợi XYZ', N'Tên cửa hàng', 'String'),
+    ('StoreAddress', N'123 Đường ABC, Quận 1, TP.HCM', N'Địa chỉ cửa hàng', 'String'),
+    ('StorePhone', '0901234567', N'Số điện thoại cửa hàng', 'String'),
+    ('StoreEmail', 'contact@store.com', N'Email cửa hàng', 'String'),
+    ('TaxRate', '10', N'Thuế suất (%)', 'Number'),
+    ('WorkingHours', '7:00 - 22:00', N'Giờ làm việc', 'String'),
+    ('ReceiptFooter', N'Cảm ơn quý khách đã mua hàng!', N'Chân trang hóa đơn', 'String'),
+    ('LowStockThreshold', '10', N'Ngưỡng cảnh báo hàng tồn kho thấp', 'Number'),
+    ('EnableEmailNotifications', 'true', N'Bật thông báo qua email', 'Boolean'),
+    ('BackupFrequency', 'Daily', N'Tần suất sao lưu dữ liệu', 'String');
+
+PRINT 'System tables created successfully';
+
+--- File: 09_StoredProcedures_Account.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Stored procedure to authenticate user
+CREATE PROCEDURE app.sp_AuthenticateUser
+    @Username NVARCHAR(50),
+    @PasswordHash NVARCHAR(128)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        a.AccountID,
+        a.Username,
+        a.Email,
+        r.RoleID,
+        r.RoleName,
+        e.EmployeeID,
+        e.FullName AS EmployeeName
+    FROM 
+        app.Account a
+    INNER JOIN 
+        app.Role r ON a.RoleID = r.RoleID
+    LEFT JOIN 
+        app.Employee e ON e.AccountID = a.AccountID
+    WHERE 
+        a.Username = @Username 
+        AND a.PasswordHash = @PasswordHash
+        AND a.IsActive = 1;
+END
+GO
+
+-- Stored procedure to create new account
+CREATE PROCEDURE app.sp_CreateAccount
+    @Username NVARCHAR(50),
+    @PasswordHash NVARCHAR(128),
+    @PasswordSalt NVARCHAR(128),
+    @Email NVARCHAR(100),
+    @RoleID INT,
+    @CreatedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if username already exists
+    IF EXISTS (SELECT 1 FROM app.Account WHERE Username = @Username)
+    BEGIN
+        RAISERROR('Username already exists', 16, 1);
+        RETURN;
+    END
+    
+    -- Insert new account
+    INSERT INTO app.Account (Username, PasswordHash, PasswordSalt, Email, RoleID, CreatedDate)
+    VALUES (@Username, @PasswordHash, @PasswordSalt, @Email, @RoleID, GETDATE());
+    
+    -- Get the new account ID
+    DECLARE @AccountID INT = SCOPE_IDENTITY();
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (AccountID, ActivityType, EntityType, EntityID, Description)
+    VALUES (@CreatedBy, 'Create', 'Account', @AccountID, 'Created new account: ' + @Username);
+    
+    -- Return the new account ID
+    SELECT @AccountID AS AccountID;
+END
+GO
+
+-- Stored procedure to update account
+CREATE PROCEDURE app.sp_UpdateAccount
+    @AccountID INT,
+    @Email NVARCHAR(100),
+    @RoleID INT,
+    @IsActive BIT,
+    @ModifiedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get current account data for logging
+    DECLARE @OldEmail NVARCHAR(100), @OldRoleID INT, @OldIsActive BIT, @Username NVARCHAR(50);
+    SELECT 
+        @OldEmail = Email, 
+        @OldRoleID = RoleID, 
+        @OldIsActive = IsActive,
+        @Username = Username
+    FROM 
+        app.Account 
+    WHERE 
+        AccountID = @AccountID;
+    
+    -- Update account
+    UPDATE app.Account
+    SET 
+        Email = @Email,
+        RoleID = @RoleID,
+        IsActive = @IsActive,
+        ModifiedDate = GETDATE()
+    WHERE 
+        AccountID = @AccountID;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (AccountID, ActivityType, EntityType, EntityID, Description)
+    VALUES (
+        @ModifiedBy, 
+        'Update', 
+        'Account', 
+        @AccountID, 
+        'Updated account: ' + @Username
+    );
+    
+    -- Return success
+    SELECT 'Account updated successfully' AS Result;
+END
+GO
+
+-- Stored procedure to change password
+CREATE PROCEDURE app.sp_ChangePassword
+    @AccountID INT,
+    @OldPasswordHash NVARCHAR(128),
+    @NewPasswordHash NVARCHAR(128),
+    @NewPasswordSalt NVARCHAR(128)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if old password is correct
+    IF NOT EXISTS (SELECT 1 FROM app.Account WHERE AccountID = @AccountID AND PasswordHash = @OldPasswordHash)
+    BEGIN
+        RAISERROR('Current password is incorrect', 16, 1);
+        RETURN;
+    END
+    
+    -- Update password
+    UPDATE app.Account
+    SET 
+        PasswordHash = @NewPasswordHash,
+        PasswordSalt = @NewPasswordSalt,
+        ModifiedDate = GETDATE()
+    WHERE 
+        AccountID = @AccountID;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (AccountID, ActivityType, EntityType, EntityID, Description)
+    VALUES (@AccountID, 'Update', 'Account', @AccountID, 'Changed password');
+    
+    -- Return success
+    SELECT 'Password changed successfully' AS Result;
+END
+GO
+
+-- Stored procedure to get all accounts
+CREATE PROCEDURE app.sp_GetAllAccounts
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        a.AccountID,
+        a.Username,
+        a.Email,
+        r.RoleName,
+        a.LastLogin,
+        a.CreatedDate,
+        a.IsActive,
+        e.FullName AS EmployeeName
+    FROM 
+        app.Account a
+    INNER JOIN 
+        app.Role r ON a.RoleID = r.RoleID
+    LEFT JOIN 
+        app.Employee e ON e.AccountID = a.AccountID
+    ORDER BY 
+        a.Username;
+END
+GO
+
+PRINT 'Account management stored procedures created successfully';
+
+--- File: 10_StoredProcedures_Product.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Stored procedure to get all products with category information
+CREATE PROCEDURE app.sp_GetAllProducts
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        p.ProductID,
+        p.ProductCode,
+        p.Barcode,
+        p.ProductName,
+        p.Description,
+        p.CostPrice,
+        p.SellPrice,
+        p.Unit,
+        p.ImagePath,
+        p.MinimumStock,
+        p.IsActive,
+        c.CategoryID,
+        c.CategoryName,
+        i.Quantity AS CurrentStock,
+        CASE 
+            WHEN i.Quantity <= p.MinimumStock THEN 1
+            ELSE 0
+        END AS IsLowStock
+    FROM 
+        app.Product p
+    INNER JOIN 
+        app.Category c ON p.CategoryID = c.CategoryID
+    LEFT JOIN 
+        app.Inventory i ON p.ProductID = i.ProductID
+    ORDER BY 
+        p.ProductName;
+END
+GO
+
+-- Stored procedure to get product by ID
+CREATE PROCEDURE app.sp_GetProductByID
+    @ProductID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        p.ProductID,
+        p.ProductCode,
+        p.Barcode,
+        p.ProductName,
+        p.Description,
+        p.CostPrice,
+        p.SellPrice,
+        p.Unit,
+        p.ImagePath,
+        p.MinimumStock,
+        p.IsActive,
+        c.CategoryID,
+        c.CategoryName,
+        i.Quantity AS CurrentStock
+    FROM 
+        app.Product p
+    INNER JOIN 
+        app.Category c ON p.CategoryID = c.CategoryID
+    LEFT JOIN 
+        app.Inventory i ON p.ProductID = i.ProductID
+    WHERE 
+        p.ProductID = @ProductID;
+        
+    -- Get product images
+    SELECT 
+        ImageID,
+        ImagePath,
+        DisplayOrder,
+        IsDefault
+    FROM 
+        app.ProductImage
+    WHERE 
+        ProductID = @ProductID
+    ORDER BY 
+        DisplayOrder;
+        
+    -- Get price history
+    SELECT 
+        PriceID,
+        CostPrice,
+        SellPrice,
+        EffectiveDate,
+        EndDate
+    FROM 
+        app.ProductPrice
+    WHERE 
+        ProductID = @ProductID
+    ORDER BY 
+        EffectiveDate DESC;
+END
+GO
+
+-- Stored procedure to create new product
+CREATE PROCEDURE app.sp_CreateProduct
+    @ProductCode NVARCHAR(20),
+    @Barcode NVARCHAR(50),
+    @ProductName NVARCHAR(200),
+    @CategoryID INT,
+    @Description NVARCHAR(500),
+    @CostPrice DECIMAL(18, 2),
+    @SellPrice DECIMAL(18, 2),
+    @Unit NVARCHAR(20),
+    @ImagePath NVARCHAR(255),
+    @MinimumStock INT,
+    @InitialStock INT,
+    @CreatedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRANSACTION;
+    
+    BEGIN TRY
+        -- Check if product code already exists
+        IF EXISTS (SELECT 1 FROM app.Product WHERE ProductCode = @ProductCode)
+        BEGIN
+            RAISERROR('Product code already exists', 16, 1);
+            ROLLBACK;
+            RETURN;
+        END
+        
+        -- Insert new product
+        INSERT INTO app.Product (
+            ProductCode, Barcode, ProductName, CategoryID, Description, 
+            CostPrice, SellPrice, Unit, ImagePath, MinimumStock, IsActive, CreatedDate
+        )
+        VALUES (
+            @ProductCode, @Barcode, @ProductName, @CategoryID, @Description, 
+            @CostPrice, @SellPrice, @Unit, @ImagePath, @MinimumStock, 1, GETDATE()
+        );
+        
+        -- Get the new product ID
+        DECLARE @ProductID INT = SCOPE_IDENTITY();
+        
+        -- Insert initial price history
+        INSERT INTO app.ProductPrice (ProductID, CostPrice, SellPrice, EffectiveDate, CreatedBy)
+        VALUES (@ProductID, @CostPrice, @SellPrice, GETDATE(), @CreatedBy);
+        
+        -- Create inventory record
+        INSERT INTO app.Inventory (ProductID, Quantity, LastUpdated)
+        VALUES (@ProductID, @InitialStock, GETDATE());
+        
+        -- If initial stock > 0, create inventory transaction
+        IF @InitialStock > 0
+        BEGIN
+            INSERT INTO app.InventoryTransaction (
+                ProductID, TransactionType, Quantity, PreviousQuantity, 
+                CurrentQuantity, UnitPrice, TotalAmount, 
+                ReferenceType, Note, CreatedBy
+            )
+            VALUES (
+                @ProductID, 'Initial', @InitialStock, 0, 
+                @InitialStock, @CostPrice, @CostPrice * @InitialStock, 
+                'Creation', 'Initial inventory', @CreatedBy
+            );
+        END
+        
+        -- Log the activity
+        INSERT INTO app.ActivityLog (
+            AccountID, ActivityType, EntityType, EntityID, Description
+        )
+        VALUES (
+            @CreatedBy, 'Create', 'Product', @ProductID, 
+            'Created new product: ' + @ProductName
+        );
+        
+        COMMIT;
+        
+        -- Return the new product ID
+        SELECT @ProductID AS ProductID;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK;
+        THROW;
+    END CATCH
+END
+GO
+
+-- Stored procedure to update product
+CREATE PROCEDURE app.sp_UpdateProduct
+    @ProductID INT,
+    @ProductName NVARCHAR(200),
+    @CategoryID INT,
+    @Description NVARCHAR(500),
+    @CostPrice DECIMAL(18, 2),
+    @SellPrice DECIMAL(18, 2),
+    @Unit NVARCHAR(20),
+    @ImagePath NVARCHAR(255),
+    @MinimumStock INT,
+    @IsActive BIT,
+    @ModifiedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRANSACTION;
+    
+    BEGIN TRY
+        -- Get current product data
+        DECLARE @OldCostPrice DECIMAL(18, 2), @OldSellPrice DECIMAL(18, 2), @OldProductName NVARCHAR(200);
+        SELECT 
+            @OldCostPrice = CostPrice, 
+            @OldSellPrice = SellPrice,
+            @OldProductName = ProductName
+        FROM 
+            app.Product 
+        WHERE 
+            ProductID = @ProductID;
+        
+        -- Update product
+        UPDATE app.Product
+        SET 
+            ProductName = @ProductName,
+            CategoryID = @CategoryID,
+            Description = @Description,
+            CostPrice = @CostPrice,
+            SellPrice = @SellPrice,
+            Unit = @Unit,
+            ImagePath = CASE WHEN @ImagePath = '' THEN ImagePath ELSE @ImagePath END,
+            MinimumStock = @MinimumStock,
+            IsActive = @IsActive,
+            ModifiedDate = GETDATE()
+        WHERE 
+            ProductID = @ProductID;
+        
+        -- If price changed, add to price history
+        IF (@OldCostPrice <> @CostPrice OR @OldSellPrice <> @SellPrice)
+        BEGIN
+            -- End the previous price period
+            UPDATE app.ProductPrice
+            SET EndDate = GETDATE()
+            WHERE ProductID = @ProductID AND EndDate IS NULL;
+            
+            -- Insert new price record
+            INSERT INTO app.ProductPrice (ProductID, CostPrice, SellPrice, EffectiveDate, CreatedBy)
+            VALUES (@ProductID, @CostPrice, @SellPrice, GETDATE(), @ModifiedBy);
+        END
+        
+        -- Log the activity
+        INSERT INTO app.ActivityLog (
+            AccountID, ActivityType, EntityType, EntityID, Description
+        )
+        VALUES (
+            @ModifiedBy, 'Update', 'Product', @ProductID, 
+            'Updated product: ' + @OldProductName
+        );
+        
+        COMMIT;
+        
+        -- Return success
+        SELECT 'Product updated successfully' AS Result;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK;
+        THROW;
+    END CATCH
+END
+GO
+
+-- Stored procedure to search products
+CREATE PROCEDURE app.sp_SearchProducts
+    @SearchTerm NVARCHAR(100),
+    @CategoryID INT = NULL,
+    @IsActive BIT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        p.ProductID,
+        p.ProductCode,
+        p.Barcode,
+        p.ProductName,
+        p.Description,
+        p.CostPrice,
+        p.SellPrice,
+        p.Unit,
+        p.ImagePath,
+        p.MinimumStock,
+        p.IsActive,
+        c.CategoryID,
+        c.CategoryName,
+        i.Quantity AS CurrentStock,
+        CASE 
+            WHEN i.Quantity <= p.MinimumStock THEN 1
+            ELSE 0
+        END AS IsLowStock
+    FROM 
+        app.Product p
+    INNER JOIN 
+        app.Category c ON p.CategoryID = c.CategoryID
+    LEFT JOIN 
+        app.Inventory i ON p.ProductID = i.ProductID
+    WHERE 
+        (
+            p.ProductName LIKE '%' + @SearchTerm + '%' OR
+            p.ProductCode LIKE '%' + @SearchTerm + '%' OR
+            p.Barcode LIKE '%' + @SearchTerm + '%' OR
+            p.Description LIKE '%' + @SearchTerm + '%'
+        )
+        AND (@CategoryID IS NULL OR p.CategoryID = @CategoryID)
+        AND (@IsActive IS NULL OR p.IsActive = @IsActive)
+    ORDER BY 
+        p.ProductName;
+END
+GO
+
+-- Stored procedure to get low stock products
+CREATE PROCEDURE app.sp_GetLowStockProducts
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        p.ProductID,
+        p.ProductCode,
+        p.ProductName,
+        p.MinimumStock,
+        i.Quantity AS CurrentStock,
+        p.MinimumStock - i.Quantity AS ShortageAmount,
+        c.CategoryName
+    FROM 
+        app.Product p
+    INNER JOIN 
+        app.Category c ON p.CategoryID = c.CategoryID
+    INNER JOIN 
+        app.Inventory i ON p.ProductID = i.ProductID
+    WHERE 
+        i.Quantity <= p.MinimumStock
+        AND p.IsActive = 1
+    ORDER BY 
+        (p.MinimumStock - i.Quantity) DESC;
+END
+GO
+
+PRINT 'Product management stored procedures created successfully';
+
+--- File: 11_StoredProcedures_Order.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Stored procedure to create new order
+CREATE PROCEDURE app.sp_CreateOrder
+    @CustomerID INT = NULL,
+    @EmployeeID INT,
+    @PaymentMethodID INT,
+    @Note NVARCHAR(500) = NULL,
+    @OrderItems app.OrderItemType READONLY -- Custom table type for order items
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRANSACTION;
+    
+    BEGIN TRY
+        -- Generate order code (format: ORD + YYYYMMDD + 4-digit sequence)
+        DECLARE @OrderDate DATE = GETDATE();
+        DECLARE @DatePart NVARCHAR(8) = FORMAT(@OrderDate, 'yyyyMMdd');
+        DECLARE @Sequence INT = 1;
+        
+        -- Get the last sequence for today
+        SELECT @Sequence = ISNULL(MAX(CAST(SUBSTRING(OrderCode, 12, 4) AS INT)), 0) + 1
+        FROM app.Order
+        WHERE SUBSTRING(OrderCode, 4, 8) = @DatePart;
+        
+        DECLARE @OrderCode NVARCHAR(20) = 'ORD' + @DatePart + RIGHT('0000' + CAST(@Sequence AS NVARCHAR(4)), 4);
+        
+        -- Calculate totals
+        DECLARE @TotalAmount DECIMAL(18, 2) = 0;
+        SELECT @TotalAmount = SUM(Quantity * UnitPrice)
+        FROM @OrderItems;
+        
+        -- Get tax rate from system config
+        DECLARE @TaxRate DECIMAL(18, 2) = 0;
+        SELECT @TaxRate = CAST(ConfigValue AS DECIMAL(18, 2))
+        FROM app.SystemConfig
+        WHERE ConfigKey = 'TaxRate';
+        
+        DECLARE @Tax DECIMAL(18, 2) = @TotalAmount * (@TaxRate / 100);
+        DECLARE @FinalAmount DECIMAL(18, 2) = @TotalAmount + @Tax;
+        
+        -- Create order
+        INSERT INTO app.Order (
+            OrderCode, CustomerID, EmployeeID, OrderDate, 
+            TotalAmount, Tax, FinalAmount, 
+            PaymentMethodID, PaymentStatus, Note, CreatedDate
+        )
+        VALUES (
+            @OrderCode, @CustomerID, @EmployeeID, GETDATE(), 
+            @TotalAmount, @Tax, @FinalAmount, 
+            @PaymentMethodID, 'Paid', @Note, GETDATE()
+        );
+        
+        -- Get the new order ID
+        DECLARE @OrderID INT = SCOPE_IDENTITY();
+        
+        -- Insert order details and update inventory
+        INSERT INTO app.OrderDetail (
+            OrderID, ProductID, Quantity, UnitPrice, Discount, TotalPrice
+        )
+        SELECT 
+            @OrderID, 
+            ProductID, 
+            Quantity, 
+            UnitPrice, 
+            Discount, 
+            (Quantity * UnitPrice) - Discount
+        FROM 
+            @OrderItems;
+        
+        -- Update inventory for each product
+        DECLARE @ProductID INT, @Quantity INT, @UnitPrice DECIMAL(18, 2);
+        DECLARE orderItems_cursor CURSOR FOR
+        SELECT ProductID, Quantity, UnitPrice FROM @OrderItems;
+        
+        OPEN orderItems_cursor;
+        FETCH NEXT FROM orderItems_cursor INTO @ProductID, @Quantity, @UnitPrice;
+        
+        WHILE @@FETCH_STATUS = 0
+        BEGIN
+            -- Get current inventory
+            DECLARE @CurrentStock INT;
+            SELECT @CurrentStock = Quantity FROM app.Inventory WHERE ProductID = @ProductID;
+            
+            -- Update inventory
+            UPDATE app.Inventory
+            SET Quantity = Quantity - @Quantity, LastUpdated = GETDATE()
+            WHERE ProductID = @ProductID;
+            
+            -- Record inventory transaction
+            INSERT INTO app.InventoryTransaction (
+                ProductID, TransactionType, Quantity, PreviousQuantity, 
+                CurrentQuantity, UnitPrice, TotalAmount, 
+                ReferenceID, ReferenceType, TransactionDate
+            )
+            VALUES (
+                @ProductID, 'Sale', @Quantity, @CurrentStock, 
+                @CurrentStock - @Quantity, @UnitPrice, @UnitPrice * @Quantity, 
+                @OrderID, 'Order', GETDATE()
+            );
+            
+            FETCH NEXT FROM orderItems_cursor INTO @ProductID, @Quantity, @UnitPrice;
+        END
+        
+        CLOSE orderItems_cursor;
+        DEALLOCATE orderItems_cursor;
+        
+        -- Log the activity
+        INSERT INTO app.ActivityLog (
+            AccountID, ActivityType, EntityType, EntityID, Description
+        )
+        VALUES (
+            @EmployeeID, 'Create', 'Order', @OrderID, 
+            'Created new order: ' + @OrderCode
+        );
+        
+        COMMIT;
+        
+        -- Return the new order info
+        SELECT 
+            @OrderID AS OrderID, 
+            @OrderCode AS OrderCode, 
+            @FinalAmount AS FinalAmount;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK;
+        THROW;
+    END CATCH
+END
+GO
+
+-- Create custom table type for order items
+CREATE TYPE app.OrderItemType AS TABLE (
+    ProductID INT,
+    Quantity INT,
+    UnitPrice DECIMAL(18, 2),
+    Discount DECIMAL(18, 2)
+);
+GO
+
+-- Stored procedure to get order by ID
+CREATE PROCEDURE app.sp_GetOrderByID
+    @OrderID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get order header
+    SELECT 
+        o.OrderID,
+        o.OrderCode,
+        o.OrderDate,
+        o.TotalAmount,
+        o.Discount,
+        o.Tax,
+        o.FinalAmount,
+        o.PaymentStatus,
+        o.Note,
+        pm.MethodName AS PaymentMethod,
+        c.CustomerID,
+        c.CustomerName,
+        c.PhoneNumber AS CustomerPhone,
+        e.EmployeeID,
+        e.FullName AS EmployeeName
+    FROM 
+        app.Order o
+    LEFT JOIN 
+        app.Customer c ON o.CustomerID = c.CustomerID
+    INNER JOIN 
+        app.Employee e ON o.EmployeeID = e.EmployeeID
+    INNER JOIN 
+        app.PaymentMethod pm ON o.PaymentMethodID = pm.PaymentMethodID
+    WHERE 
+        o.OrderID = @OrderID;
+    
+    -- Get order details
+    SELECT 
+        od.OrderDetailID,
+        od.ProductID,
+        p.ProductName,
+        p.ProductCode,
+        od.Quantity,
+        od.UnitPrice,
+        od.Discount,
+        od.TotalPrice,
+        p.Unit
+    FROM 
+        app.OrderDetail od
+    INNER JOIN 
+        app.Product p ON od.ProductID = p.ProductID
+    WHERE 
+        od.OrderID = @OrderID;
+END
+GO
+
+-- Stored procedure to get orders by date range
+CREATE PROCEDURE app.sp_GetOrdersByDateRange
+    @StartDate DATE,
+    @EndDate DATE,
+    @EmployeeID INT = NULL,
+    @PaymentStatus NVARCHAR(20) = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        o.OrderID,
+        o.OrderCode,
+        o.OrderDate,
+        o.TotalAmount,
+        o.Tax,
+        o.FinalAmount,
+        o.PaymentStatus,
+        pm.MethodName AS PaymentMethod,
+        c.CustomerName,
+        e.FullName AS EmployeeName,
+        (SELECT COUNT(*) FROM app.OrderDetail WHERE OrderID = o.OrderID) AS ItemCount
+    FROM 
+        app.Order o
+    LEFT JOIN 
+        app.Customer c ON o.CustomerID = c.CustomerID
+    INNER JOIN 
+        app.Employee e ON o.EmployeeID = e.EmployeeID
+    INNER JOIN 
+        app.PaymentMethod pm ON o.PaymentMethodID = pm.PaymentMethodID
+    WHERE 
+        CAST(o.OrderDate AS DATE) BETWEEN @StartDate AND @EndDate
+        AND (@EmployeeID IS NULL OR o.EmployeeID = @EmployeeID)
+        AND (@PaymentStatus IS NULL OR o.PaymentStatus = @PaymentStatus)
+    ORDER BY 
+        o.OrderDate DESC;
+END
+GO
+
+-- Stored procedure to cancel order
+CREATE PROCEDURE app.sp_CancelOrder
+    @OrderID INT,
+    @CancelReason NVARCHAR(500),
+    @EmployeeID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRANSACTION;
+    
+    BEGIN TRY
+        -- Check if order exists and is not already cancelled
+        IF NOT EXISTS (SELECT 1 FROM app.Order WHERE OrderID = @OrderID AND PaymentStatus <> 'Cancelled')
+        BEGIN
+            RAISERROR('Order not found or already cancelled', 16, 1);
+            ROLLBACK;
+            RETURN;
+        END
+        
+        -- Get order code for logging
+        DECLARE @OrderCode NVARCHAR(20);
+        SELECT @OrderCode = OrderCode FROM app.Order WHERE OrderID = @OrderID;
+        
+        -- Update order status
+        UPDATE app.Order
+        SET 
+            PaymentStatus = 'Cancelled',
+            Note = ISNULL(Note + ' | ', '') + 'Cancelled: ' + @CancelReason,
+            ModifiedDate = GETDATE()
+        WHERE 
+            OrderID = @OrderID;
+        
+        -- Return inventory items
+        DECLARE @ProductID INT, @Quantity INT;
+        DECLARE orderDetails_cursor CURSOR FOR
+        SELECT ProductID, Quantity FROM app.OrderDetail WHERE OrderID = @OrderID;
+        
+        OPEN orderDetails_cursor;
+        FETCH NEXT FROM orderDetails_cursor INTO @ProductID, @Quantity;
+        
+        WHILE @@FETCH_STATUS = 0
+        BEGIN
+            -- Get current inventory
+            DECLARE @CurrentStock INT;
+            SELECT @CurrentStock = Quantity FROM app.Inventory WHERE ProductID = @ProductID;
+            
+            -- Update inventory
+            UPDATE app.Inventory
+            SET Quantity = Quantity + @Quantity, LastUpdated = GETDATE()
+            WHERE ProductID = @ProductID;
+            
+            -- Record inventory transaction
+            INSERT INTO app.InventoryTransaction (
+                ProductID, TransactionType, Quantity, PreviousQuantity, 
+                CurrentQuantity, ReferenceID, ReferenceType, Note, TransactionDate
+            )
+            VALUES (
+                @ProductID, 'Return', @Quantity, @CurrentStock, 
+                @CurrentStock + @Quantity, @OrderID, 'OrderCancel', 
+                'Order cancelled: ' + @CancelReason, GETDATE()
+            );
+            
+            FETCH NEXT FROM orderDetails_cursor INTO @ProductID, @Quantity;
+        END
+        
+        CLOSE orderDetails_cursor;
+        DEALLOCATE orderDetails_cursor;
+        
+        -- Log the activity
+        INSERT INTO app.ActivityLog (
+            AccountID, ActivityType, EntityType, EntityID, Description
+        )
+        VALUES (
+            @EmployeeID, 'Cancel', 'Order', @OrderID, 
+            'Cancelled order: ' + @OrderCode + ' - Reason: ' + @CancelReason
+        );
+        
+        COMMIT;
+        
+        -- Return success
+        SELECT 'Order cancelled successfully' AS Result;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK;
+        THROW;
+    END CATCH
+END
+GO
+
+PRINT 'Order management stored procedures created successfully';
+
+--- File: 12_StoredProcedures_Inventory.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Stored procedure to create new import
+CREATE PROCEDURE app.sp_CreateImport
+    @SupplierID INT,
+    @Note NVARCHAR(500) = NULL,
+    @EmployeeID INT,
+    @ImportItems app.ImportItemType READONLY -- Custom table type for import items
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRANSACTION;
+    
+    BEGIN TRY
+        -- Generate import code (format: IMP + YYYYMMDD + 4-digit sequence)
+        DECLARE @ImportDate DATE = GETDATE();
+        DECLARE @DatePart NVARCHAR(8) = FORMAT(@ImportDate, 'yyyyMMdd');
+        DECLARE @Sequence INT = 1;
+        
+        -- Get the last sequence for today
+        SELECT @Sequence = ISNULL(MAX(CAST(SUBSTRING(ImportCode, 12, 4) AS INT)), 0) + 1
+        FROM app.Import
+        WHERE SUBSTRING(ImportCode, 4, 8) = @DatePart;
+        
+        DECLARE @ImportCode NVARCHAR(20) = 'IMP' + @DatePart + RIGHT('0000' + CAST(@Sequence AS NVARCHAR(4)), 4);
+        
+        -- Calculate total amount
+        DECLARE @TotalAmount DECIMAL(18, 2) = 0;
+        SELECT @TotalAmount = SUM(Quantity * UnitPrice)
+        FROM @ImportItems;
+        
+        -- Create import
+        INSERT INTO app.Import (
+            SupplierID, ImportCode, ImportDate, TotalAmount, 
+            Status, Note, CreatedBy, CreatedDate
+        )
+        VALUES (
+            @SupplierID, @ImportCode, GETDATE(), @TotalAmount, 
+            'Completed', @Note, @EmployeeID, GETDATE()
+        );
+        
+        -- Get the new import ID
+        DECLARE @ImportID INT = SCOPE_IDENTITY();
+        
+        -- Insert import details and update inventory
+        INSERT INTO app.ImportDetail (
+            ImportID, ProductID, Quantity, UnitPrice, TotalPrice, ExpiryDate, BatchNumber
+        )
+        SELECT 
+            @ImportID, 
+            ProductID, 
+            Quantity, 
+            UnitPrice, 
+            Quantity * UnitPrice,
+            ExpiryDate,
+            BatchNumber
+        FROM 
+            @ImportItems;
+        
+        -- Update inventory and product costs for each product
+        DECLARE @ProductID INT, @Quantity INT, @UnitPrice DECIMAL(18, 2), @ExpiryDate DATE, @BatchNumber NVARCHAR(50);
+        DECLARE importItems_cursor CURSOR FOR
+        SELECT ProductID, Quantity, UnitPrice, ExpiryDate, BatchNumber FROM @ImportItems;
+        
+        OPEN importItems_cursor;
+        FETCH NEXT FROM importItems_cursor INTO @ProductID, @Quantity, @UnitPrice, @ExpiryDate, @BatchNumber;
+        
+        WHILE @@FETCH_STATUS = 0
+        BEGIN
+            -- Get current inventory
+            DECLARE @CurrentStock INT;
+            SELECT @CurrentStock = Quantity FROM app.Inventory WHERE ProductID = @ProductID;
+            
+            -- If product doesn't exist in inventory, create it
+            IF @@ROWCOUNT = 0
+            BEGIN
+                INSERT INTO app.Inventory (ProductID, Quantity, LastUpdated)
+                VALUES (@ProductID, 0, GETDATE());
+                
+                SET @CurrentStock = 0;
+            END
+            
+            -- Update inventory
+            UPDATE app.Inventory
+            SET Quantity = Quantity + @Quantity, LastUpdated = GETDATE()
+            WHERE ProductID = @ProductID;
+            
+            -- Record inventory transaction
+            INSERT INTO app.InventoryTransaction (
+                ProductID, TransactionType, Quantity, PreviousQuantity, 
+                CurrentQuantity, UnitPrice, TotalAmount, 
+                ReferenceID, ReferenceType, Note, TransactionDate
+            )
+            VALUES (
+                @ProductID, 'Import', @Quantity, @CurrentStock, 
+                @CurrentStock + @Quantity, @UnitPrice, @UnitPrice * @Quantity, 
+                @ImportID, 'Import', 
+                'Batch: ' + ISNULL(@BatchNumber, 'N/A') + 
+                CASE WHEN @ExpiryDate IS NOT NULL THEN ', Expires: ' + CONVERT(NVARCHAR, @ExpiryDate, 103) ELSE '' END, 
+                GETDATE()
+            );
+            
+            -- Update product cost price if it has changed
+            DECLARE @CurrentCostPrice DECIMAL(18, 2);
+            SELECT @CurrentCostPrice = CostPrice FROM app.Product WHERE ProductID = @ProductID;
+            
+            IF @CurrentCostPrice <> @UnitPrice
+            BEGIN
+                -- Update product cost price
+                UPDATE app.Product
+                SET CostPrice = @UnitPrice, ModifiedDate = GETDATE()
+                WHERE ProductID = @ProductID;
+                
+                -- Add to price history
+                INSERT INTO app.ProductPrice (
+                    ProductID, CostPrice, SellPrice, EffectiveDate, CreatedBy
+                )
+                SELECT 
+                    @ProductID, @UnitPrice, SellPrice, GETDATE(), @EmployeeID
+                FROM 
+                    app.Product
+                WHERE 
+                    ProductID = @ProductID;
+            END
+            
+            FETCH NEXT FROM importItems_cursor INTO @ProductID, @Quantity, @UnitPrice, @ExpiryDate, @BatchNumber;
+        END
+        
+        CLOSE importItems_cursor;
+        DEALLOCATE importItems_cursor;
+        
+        -- Log the activity
+        INSERT INTO app.ActivityLog (
+            AccountID, ActivityType, EntityType, EntityID, Description
+        )
+        VALUES (
+            @EmployeeID, 'Create', 'Import', @ImportID, 
+            'Created new import: ' + @ImportCode
+        );
+        
+        COMMIT;
+        
+        -- Return the new import info
+        SELECT 
+            @ImportID AS ImportID, 
+            @ImportCode AS ImportCode, 
+            @TotalAmount AS TotalAmount;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK;
+        THROW;
+    END CATCH
+END
+GO
+
+-- Create custom table type for import items
+CREATE TYPE app.ImportItemType AS TABLE (
+    ProductID INT,
+    Quantity INT,
+    UnitPrice DECIMAL(18, 2),
+    ExpiryDate DATE NULL,
+    BatchNumber NVARCHAR(50) NULL
+);
+GO
+
+-- Stored procedure to get import by ID
+CREATE PROCEDURE app.sp_GetImportByID
+    @ImportID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get import header
+    SELECT 
+        i.ImportID,
+        i.ImportCode,
+        i.ImportDate,
+        i.TotalAmount,
+        i.Status,
+        i.Note,
+        s.SupplierID,
+        s.SupplierName,
+        s.ContactPerson,
+        s.PhoneNumber AS SupplierPhone,
+        e.EmployeeID,
+        e.FullName AS EmployeeName
+    FROM 
+        app.Import i
+    INNER JOIN 
+        app.Supplier s ON i.SupplierID = s.SupplierID
+    INNER JOIN 
+        app.Employee e ON i.CreatedBy = e.EmployeeID
+    WHERE 
+        i.ImportID = @ImportID;
+    
+    -- Get import details
+    SELECT 
+        id.ImportDetailID,
+        id.ProductID,
+        p.ProductName,
+        p.ProductCode,
+        id.Quantity,
+        id.UnitPrice,
+        id.TotalPrice,
+        id.ExpiryDate,
+        id.BatchNumber,
+        p.Unit
+    FROM 
+        app.ImportDetail id
+    INNER JOIN 
+        app.Product p ON id.ProductID = p.ProductID
+    WHERE 
+        id.ImportID = @ImportID;
+END
+GO
+
+-- Stored procedure to get imports by date range
+CREATE PROCEDURE app.sp_GetImportsByDateRange
+    @StartDate DATE,
+    @EndDate DATE,
+    @SupplierID INT = NULL,
+    @Status NVARCHAR(20) = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        i.ImportID,
+        i.ImportCode,
+        i.ImportDate,
+        i.TotalAmount,
+        i.Status,
+        s.SupplierName,
+        e.FullName AS EmployeeName,
+        (SELECT COUNT(*) FROM app.ImportDetail WHERE ImportID = i.ImportID) AS ItemCount
+    FROM 
+        app.Import i
+    INNER JOIN 
+        app.Supplier s ON i.SupplierID = s.SupplierID
+    INNER JOIN 
+        app.Employee e ON i.CreatedBy = e.EmployeeID
+    WHERE 
+        CAST(i.ImportDate AS DATE) BETWEEN @StartDate AND @EndDate
+        AND (@SupplierID IS NULL OR i.SupplierID = @SupplierID)
+        AND (@Status IS NULL OR i.Status = @Status)
+    ORDER BY 
+        i.ImportDate DESC;
+END
+GO
+
+-- Stored procedure to adjust inventory
+CREATE PROCEDURE app.sp_AdjustInventory
+    @ProductID INT,
+    @NewQuantity INT,
+    @Reason NVARCHAR(200),
+    @EmployeeID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRANSACTION;
+    
+    BEGIN TRY
+        -- Get current inventory
+        DECLARE @CurrentQuantity INT;
+        SELECT @CurrentQuantity = Quantity FROM app.Inventory WHERE ProductID = @ProductID;
+        
+        IF @@ROWCOUNT = 0
+        BEGIN
+            RAISERROR('Product not found in inventory', 16, 1);
+            ROLLBACK;
+            RETURN;
+        END
+        
+        -- Calculate adjustment quantity
+        DECLARE @AdjustmentQuantity INT = @NewQuantity - @CurrentQuantity;
+        
+        -- Update inventory
+        UPDATE app.Inventory
+        SET Quantity = @NewQuantity, LastUpdated = GETDATE()
+        WHERE ProductID = @ProductID;
+        
+        -- Record inventory transaction
+        INSERT INTO app.InventoryTransaction (
+            ProductID, TransactionType, Quantity, PreviousQuantity, 
+            CurrentQuantity, ReferenceType, Note, TransactionDate, CreatedBy
+        )
+        VALUES (
+            @ProductID, 'Adjustment', @AdjustmentQuantity, @CurrentQuantity, 
+            @NewQuantity, 'Manual', 'Manual adjustment: ' + @Reason, GETDATE(), @EmployeeID
+        );
+        
+        -- Get product name for logging
+        DECLARE @ProductName NVARCHAR(200);
+        SELECT @ProductName = ProductName FROM app.Product WHERE ProductID = @ProductID;
+        
+        -- Log the activity
+        INSERT INTO app.ActivityLog (
+            AccountID, ActivityType, EntityType, EntityID, Description
+        )
+        VALUES (
+            @EmployeeID, 'Adjust', 'Inventory', @ProductID, 
+            'Adjusted inventory for ' + @ProductName + ' from ' + 
+            CAST(@CurrentQuantity AS NVARCHAR) + ' to ' + CAST(@NewQuantity AS NVARCHAR) + 
+            ' - Reason: ' + @Reason
+        );
+        
+        COMMIT;
+        
+        -- Return success
+        SELECT 'Inventory adjusted successfully' AS Result;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK;
+        THROW;
+    END CATCH
+END
+GO
+
+-- Stored procedure to get inventory transactions by product
+CREATE PROCEDURE app.sp_GetInventoryTransactionsByProduct
+    @ProductID INT,
+    @StartDate DATE = NULL,
+    @EndDate DATE = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        t.TransactionID,
+        t.TransactionType,
+        t.Quantity,
+        t.PreviousQuantity,
+        t.CurrentQuantity,
+        t.UnitPrice,
+        t.TotalAmount,
+        t.ReferenceID,
+        t.ReferenceType,
+        t.Note,
+        t.TransactionDate,
+        e.FullName AS CreatedByName
+    FROM 
+        app.InventoryTransaction t
+    LEFT JOIN 
+        app.Employee e ON t.CreatedBy = e.EmployeeID
+    WHERE 
+        t.ProductID = @ProductID
+        AND (@StartDate IS NULL OR CAST(t.TransactionDate AS DATE) >= @StartDate)
+        AND (@EndDate IS NULL OR CAST(t.TransactionDate AS DATE) <= @EndDate)
+    ORDER BY 
+        t.TransactionDate DESC;
+END
+GO
+
+PRINT 'Inventory management stored procedures created successfully';
+
+--- File: 13_StoredProcedures_Reporting.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Stored procedure to get daily sales report
+CREATE PROCEDURE app.sp_GetDailySalesReport
+    @StartDate DATE,
+    @EndDate DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get daily sales summary
+    SELECT 
+        CAST(o.OrderDate AS DATE) AS SalesDate,
+        COUNT(DISTINCT o.OrderID) AS OrderCount,
+        SUM(o.TotalAmount) AS TotalSales,
+        SUM(o.FinalAmount) AS FinalAmount,
+        SUM(o.Tax) AS TotalTax
+    FROM 
+        app.Order o
+    WHERE 
+        CAST(o.OrderDate AS DATE) BETWEEN @StartDate AND @EndDate
+        AND o.PaymentStatus = 'Paid'
+    GROUP BY 
+        CAST(o.OrderDate AS DATE)
+    ORDER BY 
+        CAST(o.OrderDate AS DATE);
+    
+    -- Get product category sales
+    SELECT 
+        c.CategoryID,
+        c.CategoryName,
+        COUNT(DISTINCT o.OrderID) AS OrderCount,
+        SUM(od.Quantity) AS TotalQuantity,
+        SUM(od.TotalPrice) AS TotalSales
+    FROM 
+        app.OrderDetail od
+    INNER JOIN 
+        app.Order o ON od.OrderID = o.OrderID
+    INNER JOIN 
+        app.Product p ON od.ProductID = p.ProductID
+    INNER JOIN 
+        app.Category c ON p.CategoryID = c.CategoryID
+    WHERE 
+        CAST(o.OrderDate AS DATE) BETWEEN @StartDate AND @EndDate
+        AND o.PaymentStatus = 'Paid'
+    GROUP BY 
+        c.CategoryID, c.CategoryName
+    ORDER BY 
+        SUM(od.TotalPrice) DESC;
+    
+    -- Get payment method summary
+    SELECT 
+        pm.PaymentMethodID,
+        pm.MethodName,
+        COUNT(DISTINCT o.OrderID) AS OrderCount,
+        SUM(o.FinalAmount) AS TotalAmount
+    FROM 
+        app.Order o
+    INNER JOIN 
+        app.PaymentMethod pm ON o.PaymentMethodID = pm.PaymentMethodID
+    WHERE 
+        CAST(o.OrderDate AS DATE) BETWEEN @StartDate AND @EndDate
+        AND o.PaymentStatus = 'Paid'
+    GROUP BY 
+        pm.PaymentMethodID, pm.MethodName
+    ORDER BY 
+        SUM(o.FinalAmount) DESC;
+END
+GO
+
+-- Stored procedure to get top selling products
+CREATE PROCEDURE app.sp_GetTopSellingProducts
+    @StartDate DATE,
+    @EndDate DATE,
+    @TopCount INT = 10
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT TOP (@TopCount)
+        p.ProductID,
+        p.ProductCode,
+        p.ProductName,
+        c.CategoryName,
+        SUM(od.Quantity) AS TotalQuantity,
+        SUM(od.TotalPrice) AS TotalSales,
+        COUNT(DISTINCT o.OrderID) AS OrderCount
+    FROM 
+        app.OrderDetail od
+    INNER JOIN 
+        app.Order o ON od.OrderID = o.OrderID
+    INNER JOIN 
+        app.Product p ON od.ProductID = p.ProductID
+    INNER JOIN 
+        app.Category c ON p.CategoryID = c.CategoryID
+    WHERE 
+        CAST(o.OrderDate AS DATE) BETWEEN @StartDate AND @EndDate
+        AND o.PaymentStatus = 'Paid'
+    GROUP BY 
+        p.ProductID, p.ProductCode, p.ProductName, c.CategoryName
+    ORDER BY 
+        SUM(od.Quantity) DESC;
+END
+GO
+
+-- Stored procedure to get inventory value report
+CREATE PROCEDURE app.sp_GetInventoryValueReport
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        c.CategoryName,
+        p.ProductID,
+        p.ProductCode,
+        p.ProductName,
+        i.Quantity AS CurrentStock,
+        p.CostPrice AS UnitCost,
+        p.SellPrice AS UnitPrice,
+        (i.Quantity * p.CostPrice) AS TotalCostValue,
+        (i.Quantity * p.SellPrice) AS TotalSellValue,
+        ((i.Quantity * p.SellPrice) - (i.Quantity * p.CostPrice)) AS PotentialProfit
+    FROM 
+        app.Product p
+    INNER JOIN 
+        app.Category c ON p.CategoryID = c.CategoryID
+    INNER JOIN 
+        app.Inventory i ON p.ProductID = i.ProductID
+    WHERE 
+        p.IsActive = 1
+    ORDER BY 
+        c.CategoryName, p.ProductName;
+    
+    -- Summary by category
+    SELECT 
+        c.CategoryName,
+        COUNT(p.ProductID) AS ProductCount,
+        SUM(i.Quantity) AS TotalQuantity,
+        SUM(i.Quantity * p.CostPrice) AS TotalCostValue,
+        SUM(i.Quantity * p.SellPrice) AS TotalSellValue,
+        SUM((i.Quantity * p.SellPrice) - (i.Quantity * p.CostPrice)) AS PotentialProfit
+    FROM 
+        app.Product p
+    INNER JOIN 
+        app.Category c ON p.CategoryID = c.CategoryID
+    INNER JOIN 
+        app.Inventory i ON p.ProductID = i.ProductID
+    WHERE 
+        p.IsActive = 1
+    GROUP BY 
+        c.CategoryName
+    ORDER BY 
+        SUM(i.Quantity * p.CostPrice) DESC;
+END
+GO
+
+-- Stored procedure to get revenue report by date range
+CREATE PROCEDURE app.sp_GetRevenueReport
+    @StartDate DATE,
+    @EndDate DATE,
+    @GroupBy NVARCHAR(10) = 'Day' -- Day, Week, Month
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    IF @GroupBy = 'Day'
+    BEGIN
+        SELECT 
+            CAST(o.OrderDate AS DATE) AS ReportDate,
+            COUNT(DISTINCT o.OrderID) AS OrderCount,
+            SUM(o.TotalAmount) AS GrossSales,
+            SUM(o.Discount) AS TotalDiscount,
+            SUM(o.Tax) AS TotalTax,
+            SUM(o.FinalAmount) AS NetSales
+        FROM 
+            app.Order o
+        WHERE 
+            CAST(o.OrderDate AS DATE) BETWEEN @StartDate AND @EndDate
+            AND o.PaymentStatus = 'Paid'
+        GROUP BY 
+            CAST(o.OrderDate AS DATE)
+        ORDER BY 
+            CAST(o.OrderDate AS DATE);
+    END
+    ELSE IF @GroupBy = 'Week'
+    BEGIN
+        SELECT 
+            DATEPART(YEAR, o.OrderDate) AS Year,
+            DATEPART(WEEK, o.OrderDate) AS WeekNumber,
+            MIN(CAST(o.OrderDate AS DATE)) AS WeekStart,
+            COUNT(DISTINCT o.OrderID) AS OrderCount,
+            SUM(o.TotalAmount) AS GrossSales,
+            SUM(o.Discount) AS TotalDiscount,
+            SUM(o.Tax) AS TotalTax,
+            SUM(o.FinalAmount) AS NetSales
+        FROM 
+            app.Order o
+        WHERE 
+            CAST(o.OrderDate AS DATE) BETWEEN @StartDate AND @EndDate
+            AND o.PaymentStatus = 'Paid'
+        GROUP BY 
+            DATEPART(YEAR, o.OrderDate), DATEPART(WEEK, o.OrderDate)
+        ORDER BY 
+            DATEPART(YEAR, o.OrderDate), DATEPART(WEEK, o.OrderDate);
+    END
+    ELSE IF @GroupBy = 'Month'
+    BEGIN
+        SELECT 
+            DATEPART(YEAR, o.OrderDate) AS Year,
+            DATEPART(MONTH, o.OrderDate) AS Month,
+            DATENAME(MONTH, o.OrderDate) AS MonthName,
+            COUNT(DISTINCT o.OrderID) AS OrderCount,
+            SUM(o.TotalAmount) AS GrossSales,
+            SUM(o.Discount) AS TotalDiscount,
+            SUM(o.Tax) AS TotalTax,
+            SUM(o.FinalAmount) AS NetSales
+        FROM 
+            app.Order o
+        WHERE 
+            CAST(o.OrderDate AS DATE) BETWEEN @StartDate AND @EndDate
+            AND o.PaymentStatus = 'Paid'
+        GROUP BY 
+            DATEPART(YEAR, o.OrderDate), DATEPART(MONTH, o.OrderDate), DATENAME(MONTH, o.OrderDate)
+        ORDER BY 
+            DATEPART(YEAR, o.OrderDate), DATEPART(MONTH, o.OrderDate);
+    END
+END
+GO
+
+-- Stored procedure to get employee sales performance
+CREATE PROCEDURE app.sp_GetEmployeeSalesPerformance
+    @StartDate DATE,
+    @EndDate DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        e.EmployeeID,
+        e.FullName AS EmployeeName,
+        COUNT(DISTINCT o.OrderID) AS OrderCount,
+        SUM(o.TotalAmount) AS TotalSales,
+        SUM(o.FinalAmount) AS NetSales,
+        AVG(o.FinalAmount) AS AverageOrderValue,
+        MIN(o.OrderDate) AS FirstOrderDate,
+        MAX(o.OrderDate) AS LastOrderDate
+    FROM 
+        app.Order o
+    INNER JOIN 
+        app.Employee e ON o.EmployeeID = e.EmployeeID
+    WHERE 
+        CAST(o.OrderDate AS DATE) BETWEEN @StartDate AND @EndDate
+        AND o.PaymentStatus = 'Paid'
+    GROUP BY 
+        e.EmployeeID, e.FullName
+    ORDER BY 
+        SUM(o.FinalAmount) DESC;
+END
+GO
+
+PRINT 'Reporting stored procedures created successfully';
+
+--- File: 14_StoredProcedures_Category.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Stored procedure to get all categories
+CREATE PROCEDURE app.sp_GetAllCategories
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    WITH CategoryHierarchy AS (
+        -- Root categories (no parent)
+        SELECT 
+            c.CategoryID,
+            c.CategoryName,
+            c.Description,
+            c.ParentCategoryID,
+            c.DisplayOrder,
+            c.IsActive,
+            0 AS Level,
+            CAST(c.CategoryName AS NVARCHAR(500)) AS Hierarchy
+        FROM 
+            app.Category c
+        WHERE 
+            c.ParentCategoryID IS NULL
+        
+        UNION ALL
+        
+        -- Child categories
+        SELECT 
+            c.CategoryID,
+            c.CategoryName,
+            c.Description,
+            c.ParentCategoryID,
+            c.DisplayOrder,
+            c.IsActive,
+            ch.Level + 1,
+            CAST(ch.Hierarchy + ' > ' + c.CategoryName AS NVARCHAR(500))
+        FROM 
+            app.Category c
+        INNER JOIN 
+            CategoryHierarchy ch ON c.ParentCategoryID = ch.CategoryID
+    )
+    SELECT 
+        ch.CategoryID,
+        ch.CategoryName,
+        ch.Description,
+        ch.ParentCategoryID,
+        p.CategoryName AS ParentCategoryName,
+        ch.DisplayOrder,
+        ch.IsActive,
+        ch.Level,
+        ch.Hierarchy,
+        (SELECT COUNT(*) FROM app.Product WHERE CategoryID = ch.CategoryID) AS ProductCount
+    FROM 
+        CategoryHierarchy ch
+    LEFT JOIN 
+        app.Category p ON ch.ParentCategoryID = p.CategoryID
+    ORDER BY 
+        ch.Hierarchy;
+END
+GO
+
+-- Stored procedure to get category by ID
+CREATE PROCEDURE app.sp_GetCategoryByID
+    @CategoryID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get category details
+    SELECT 
+        c.CategoryID,
+        c.CategoryName,
+        c.Description,
+        c.ParentCategoryID,
+        p.CategoryName AS ParentCategoryName,
+        c.DisplayOrder,
+        c.IsActive,
+        c.CreatedDate,
+        c.ModifiedDate
+    FROM 
+        app.Category c
+    LEFT JOIN 
+        app.Category p ON c.ParentCategoryID = p.CategoryID
+    WHERE 
+        c.CategoryID = @CategoryID;
+    
+    -- Get child categories
+    SELECT 
+        CategoryID,
+        CategoryName,
+        Description,
+        DisplayOrder,
+        IsActive
+    FROM 
+        app.Category
+    WHERE 
+        ParentCategoryID = @CategoryID
+    ORDER BY 
+        DisplayOrder, CategoryName;
+    
+    -- Get products in this category
+    SELECT 
+        p.ProductID,
+        p.ProductCode,
+        p.ProductName,
+        p.SellPrice,
+        i.Quantity AS CurrentStock,
+        p.IsActive
+    FROM 
+        app.Product p
+    LEFT JOIN 
+        app.Inventory i ON p.ProductID = i.ProductID
+    WHERE 
+        p.CategoryID = @CategoryID
+    ORDER BY 
+        p.ProductName;
+END
+GO
+
+-- Stored procedure to create new category
+CREATE PROCEDURE app.sp_CreateCategory
+    @CategoryName NVARCHAR(100),
+    @Description NVARCHAR(500) = NULL,
+    @ParentCategoryID INT = NULL,
+    @DisplayOrder INT = 0,
+    @CreatedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if category name already exists
+    IF EXISTS (SELECT 1 FROM app.Category WHERE CategoryName = @CategoryName AND (@ParentCategoryID IS NULL OR ParentCategoryID = @ParentCategoryID))
+    BEGIN
+        RAISERROR('Category name already exists at this level', 16, 1);
+        RETURN;
+    END
+    
+    -- Insert new category
+    INSERT INTO app.Category (
+        CategoryName, Description, ParentCategoryID, DisplayOrder, IsActive, CreatedDate
+    )
+    VALUES (
+        @CategoryName, @Description, @ParentCategoryID, @DisplayOrder, 1, GETDATE()
+    );
+    
+    -- Get the new category ID
+    DECLARE @CategoryID INT = SCOPE_IDENTITY();
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @CreatedBy, 'Create', 'Category', @CategoryID, 
+        'Created new category: ' + @CategoryName
+    );
+    
+    -- Return the new category ID
+    SELECT @CategoryID AS CategoryID;
+END
+GO
+
+-- Stored procedure to update category
+CREATE PROCEDURE app.sp_UpdateCategory
+    @CategoryID INT,
+    @CategoryName NVARCHAR(100),
+    @Description NVARCHAR(500) = NULL,
+    @ParentCategoryID INT = NULL,
+    @DisplayOrder INT = 0,
+    @IsActive BIT = 1,
+    @ModifiedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if category name already exists (excluding current category)
+    IF EXISTS (
+        SELECT 1 
+        FROM app.Category 
+        WHERE CategoryName = @CategoryName 
+        AND (@ParentCategoryID IS NULL OR ParentCategoryID = @ParentCategoryID)
+        AND CategoryID <> @CategoryID
+    )
+    BEGIN
+        RAISERROR('Category name already exists at this level', 16, 1);
+        RETURN;
+    END
+    
+    -- Check for circular reference
+    IF @ParentCategoryID IS NOT NULL AND @CategoryID = @ParentCategoryID
+    BEGIN
+        RAISERROR('A category cannot be its own parent', 16, 1);
+        RETURN;
+    END
+    
+    -- Get current category data for logging
+    DECLARE @OldCategoryName NVARCHAR(100), @OldParentCategoryID INT;
+    SELECT 
+        @OldCategoryName = CategoryName,
+        @OldParentCategoryID = ParentCategoryID
+    FROM 
+        app.Category 
+    WHERE 
+        CategoryID = @CategoryID;
+    
+    -- Update category
+    UPDATE app.Category
+    SET 
+        CategoryName = @CategoryName,
+        Description = @Description,
+        ParentCategoryID = @ParentCategoryID,
+        DisplayOrder = @DisplayOrder,
+        IsActive = @IsActive,
+        ModifiedDate = GETDATE()
+    WHERE 
+        CategoryID = @CategoryID;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @ModifiedBy, 'Update', 'Category', @CategoryID, 
+        'Updated category: ' + @OldCategoryName
+    );
+    
+    -- Return success
+    SELECT 'Category updated successfully' AS Result;
+END
+GO
+
+-- Stored procedure to delete category
+CREATE PROCEDURE app.sp_DeleteCategory
+    @CategoryID INT,
+    @DeletedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRANSACTION;
+    
+    BEGIN TRY
+        -- Check if category has products
+        IF EXISTS (SELECT 1 FROM app.Product WHERE CategoryID = @CategoryID)
+        BEGIN
+            RAISERROR('Cannot delete category with associated products', 16, 1);
+            ROLLBACK;
+            RETURN;
+        END
+        
+        -- Check if category has child categories
+        IF EXISTS (SELECT 1 FROM app.Category WHERE ParentCategoryID = @CategoryID)
+        BEGIN
+            RAISERROR('Cannot delete category with child categories', 16, 1);
+            ROLLBACK;
+            RETURN;
+        END
+        
+        -- Get category name for logging
+        DECLARE @CategoryName NVARCHAR(100);
+        SELECT @CategoryName = CategoryName FROM app.Category WHERE CategoryID = @CategoryID;
+        
+        -- Delete category
+        DELETE FROM app.Category WHERE CategoryID = @CategoryID;
+        
+        -- Log the activity
+        INSERT INTO app.ActivityLog (
+            AccountID, ActivityType, EntityType, EntityID, Description
+        )
+        VALUES (
+            @DeletedBy, 'Delete', 'Category', @CategoryID, 
+            'Deleted category: ' + @CategoryName
+        );
+        
+        COMMIT;
+        
+        -- Return success
+        SELECT 'Category deleted successfully' AS Result;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK;
+        THROW;
+    END CATCH
+END
+GO
+
+PRINT 'Category management stored procedures created successfully';
+
+--- File: 15_StoredProcedures_Supplier.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Stored procedure to get all suppliers
+CREATE PROCEDURE app.sp_GetAllSuppliers
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        s.SupplierID,
+        s.SupplierName,
+        s.ContactPerson,
+        s.PhoneNumber,
+        s.Email,
+        s.Address,
+        s.TaxCode,
+        s.IsActive,
+        s.CreatedDate,
+        s.ModifiedDate,
+        (SELECT COUNT(*) FROM app.Import WHERE SupplierID = s.SupplierID) AS ImportCount,
+        (SELECT MAX(ImportDate) FROM app.Import WHERE SupplierID = s.SupplierID) AS LastImportDate
+    FROM 
+        app.Supplier s
+    ORDER BY 
+        s.SupplierName;
+END
+GO
+
+-- Stored procedure to get supplier by ID
+CREATE PROCEDURE app.sp_GetSupplierByID
+    @SupplierID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get supplier details
+    SELECT 
+        s.SupplierID,
+        s.SupplierName,
+        s.ContactPerson,
+        s.PhoneNumber,
+        s.Email,
+        s.Address,
+        s.TaxCode,
+        s.IsActive,
+        s.CreatedDate,
+        s.ModifiedDate
+    FROM 
+        app.Supplier s
+    WHERE 
+        s.SupplierID = @SupplierID;
+    
+    -- Get recent imports
+    SELECT TOP 10
+        i.ImportID,
+        i.ImportCode,
+        i.ImportDate,
+        i.TotalAmount,
+        i.Status,
+        e.FullName AS CreatedByName
+    FROM 
+        app.Import i
+    INNER JOIN 
+        app.Employee e ON i.CreatedBy = e.EmployeeID
+    WHERE 
+        i.SupplierID = @SupplierID
+    ORDER BY 
+        i.ImportDate DESC;
+    
+    -- Get products supplied by this supplier
+    SELECT DISTINCT
+        p.ProductID,
+        p.ProductCode,
+        p.ProductName,
+        c.CategoryName,
+        MAX(id.UnitPrice) AS LastUnitPrice,
+        MAX(i.ImportDate) AS LastImportDate
+    FROM 
+        app.ImportDetail id
+    INNER JOIN 
+        app.Import i ON id.ImportID = i.ImportID
+    INNER JOIN 
+        app.Product p ON id.ProductID = p.ProductID
+    INNER JOIN 
+        app.Category c ON p.CategoryID = c.CategoryID
+    WHERE 
+        i.SupplierID = @SupplierID
+    GROUP BY
+        p.ProductID, p.ProductCode, p.ProductName, c.CategoryName
+    ORDER BY 
+        MAX(i.ImportDate) DESC;
+END
+GO
+
+-- Stored procedure to create new supplier
+CREATE PROCEDURE app.sp_CreateSupplier
+    @SupplierName NVARCHAR(200),
+    @ContactPerson NVARCHAR(100) = NULL,
+    @PhoneNumber NVARCHAR(20) = NULL,
+    @Email NVARCHAR(100) = NULL,
+    @Address NVARCHAR(200) = NULL,
+    @TaxCode NVARCHAR(50) = NULL,
+    @CreatedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if supplier name already exists
+    IF EXISTS (SELECT 1 FROM app.Supplier WHERE SupplierName = @SupplierName)
+    BEGIN
+        RAISERROR('Supplier name already exists', 16, 1);
+        RETURN;
+    END
+    
+    -- Insert new supplier
+    INSERT INTO app.Supplier (
+        SupplierName, ContactPerson, PhoneNumber, Email, Address, TaxCode, IsActive, CreatedDate
+    )
+    VALUES (
+        @SupplierName, @ContactPerson, @PhoneNumber, @Email, @Address, @TaxCode, 1, GETDATE()
+    );
+    
+    -- Get the new supplier ID
+    DECLARE @SupplierID INT = SCOPE_IDENTITY();
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @CreatedBy, 'Create', 'Supplier', @SupplierID, 
+        'Created new supplier: ' + @SupplierName
+    );
+    
+    -- Return the new supplier ID
+    SELECT @SupplierID AS SupplierID;
+END
+GO
+
+-- Stored procedure to update supplier
+CREATE PROCEDURE app.sp_UpdateSupplier
+    @SupplierID INT,
+    @SupplierName NVARCHAR(200),
+    @ContactPerson NVARCHAR(100) = NULL,
+    @PhoneNumber NVARCHAR(20) = NULL,
+    @Email NVARCHAR(100) = NULL,
+    @Address NVARCHAR(200) = NULL,
+    @TaxCode NVARCHAR(50) = NULL,
+    @IsActive BIT = 1,
+    @ModifiedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if supplier name already exists (excluding current supplier)
+    IF EXISTS (
+        SELECT 1 
+        FROM app.Supplier 
+        WHERE SupplierName = @SupplierName 
+        AND SupplierID <> @SupplierID
+    )
+    BEGIN
+        RAISERROR('Supplier name already exists', 16, 1);
+        RETURN;
+    END
+    
+    -- Get current supplier data for logging
+    DECLARE @OldSupplierName NVARCHAR(200);
+    SELECT @OldSupplierName = SupplierName FROM app.Supplier WHERE SupplierID = @SupplierID;
+    
+    -- Update supplier
+    UPDATE app.Supplier
+    SET 
+        SupplierName = @SupplierName,
+        ContactPerson = @ContactPerson,
+        PhoneNumber = @PhoneNumber,
+        Email = @Email,
+        Address = @Address,
+        TaxCode = @TaxCode,
+        IsActive = @IsActive,
+        ModifiedDate = GETDATE()
+    WHERE 
+        SupplierID = @SupplierID;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @ModifiedBy, 'Update', 'Supplier', @SupplierID, 
+        'Updated supplier: ' + @OldSupplierName
+    );
+    
+    -- Return success
+    SELECT 'Supplier updated successfully' AS Result;
+END
+GO
+
+-- Stored procedure to search suppliers
+CREATE PROCEDURE app.sp_SearchSuppliers
+    @SearchTerm NVARCHAR(100),
+    @IsActive BIT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        s.SupplierID,
+        s.SupplierName,
+        s.ContactPerson,
+        s.PhoneNumber,
+        s.Email,
+        s.Address,
+        s.TaxCode,
+        s.IsActive,
+        s.CreatedDate,
+        s.ModifiedDate,
+        (SELECT COUNT(*) FROM app.Import WHERE SupplierID = s.SupplierID) AS ImportCount,
+        (SELECT MAX(ImportDate) FROM app.Import WHERE SupplierID = s.SupplierID) AS LastImportDate
+    FROM 
+        app.Supplier s
+    WHERE 
+        (
+            s.SupplierName LIKE '%' + @SearchTerm + '%' OR
+            s.ContactPerson LIKE '%' + @SearchTerm + '%' OR
+            s.PhoneNumber LIKE '%' + @SearchTerm + '%' OR
+            s.Email LIKE '%' + @SearchTerm + '%' OR
+            s.Address LIKE '%' + @SearchTerm + '%' OR
+            s.TaxCode LIKE '%' + @SearchTerm + '%'
+        )
+        AND (@IsActive IS NULL OR s.IsActive = @IsActive)
+    ORDER BY 
+        s.SupplierName;
+END
+GO
+
+-- Stored procedure to get supplier product history
+CREATE PROCEDURE app.sp_GetSupplierProductHistory
+    @SupplierID INT,
+    @ProductID INT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        p.ProductID,
+        p.ProductCode,
+        p.ProductName,
+        i.ImportID,
+        i.ImportCode,
+        i.ImportDate,
+        id.Quantity,
+        id.UnitPrice,
+        id.TotalPrice,
+        id.BatchNumber,
+        id.ExpiryDate
+    FROM 
+        app.ImportDetail id
+    INNER JOIN 
+        app.Import i ON id.ImportID = i.ImportID
+    INNER JOIN 
+        app.Product p ON id.ProductID = p.ProductID
+    WHERE 
+        i.SupplierID = @SupplierID
+        AND (@ProductID IS NULL OR id.ProductID = @ProductID)
+    ORDER BY 
+        i.ImportDate DESC, p.ProductName;
+END
+GO
+
+PRINT 'Supplier management stored procedures created successfully';
+
+--- File: 16_CreateDatabaseViews.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- View for product inventory status
+CREATE VIEW app.vw_ProductInventory
+AS
+SELECT 
+    p.ProductID,
+    p.ProductCode,
+    p.Barcode,
+    p.ProductName,
+    c.CategoryID,
+    c.CategoryName,
+    p.CostPrice,
+    p.SellPrice,
+    p.Unit,
+    p.MinimumStock,
+    i.Quantity AS CurrentStock,
+    CASE 
+        WHEN i.Quantity <= p.MinimumStock THEN 1
+        ELSE 0
+    END AS IsLowStock,
+    CASE 
+        WHEN i.Quantity <= 0 THEN 'Out of Stock'
+        WHEN i.Quantity <= p.MinimumStock THEN 'Low Stock'
+        ELSE 'In Stock'
+    END AS StockStatus,
+    p.IsActive,
+    i.LastUpdated AS LastStockUpdate
+FROM 
+    app.Product p
+INNER JOIN 
+    app.Category c ON p.CategoryID = c.CategoryID
+LEFT JOIN 
+    app.Inventory i ON p.ProductID = i.ProductID;
+GO
+
+-- View for order summary
+CREATE VIEW app.vw_OrderSummary
+AS
+SELECT 
+    o.OrderID,
+    o.OrderCode,
+    o.OrderDate,
+    o.TotalAmount,
+    o.Discount,
+    o.Tax,
+    o.FinalAmount,
+    o.PaymentStatus,
+    pm.MethodName AS PaymentMethod,
+    c.CustomerID,
+    c.CustomerName,
+    c.PhoneNumber AS CustomerPhone,
+    e.EmployeeID,
+    e.FullName AS EmployeeName,
+    (SELECT COUNT(*) FROM app.OrderDetail WHERE OrderID = o.OrderID) AS ItemCount
+FROM 
+    app.Order o
+LEFT JOIN 
+    app.Customer c ON o.CustomerID = c.CustomerID
+INNER JOIN 
+    app.Employee e ON o.EmployeeID = e.EmployeeID
+INNER JOIN 
+    app.PaymentMethod pm ON o.PaymentMethodID = pm.PaymentMethodID;
+GO
+
+-- View for order details with product information
+CREATE VIEW app.vw_OrderDetailExtended
+AS
+SELECT 
+    od.OrderDetailID,
+    od.OrderID,
+    o.OrderCode,
+    o.OrderDate,
+    od.ProductID,
+    p.ProductCode,
+    p.ProductName,
+    p.Barcode,
+    c.CategoryName,
+    od.Quantity,
+    od.UnitPrice,
+    od.Discount,
+    od.TotalPrice,
+    p.Unit
+FROM 
+    app.OrderDetail od
+INNER JOIN 
+    app.Order o ON od.OrderID = o.OrderID
+INNER JOIN 
+    app.Product p ON od.ProductID = p.ProductID
+INNER JOIN 
+    app.Category c ON p.CategoryID = c.CategoryID;
+GO
+
+-- View for daily sales summary
+CREATE VIEW app.vw_DailySalesSummary
+AS
+SELECT 
+    CAST(o.OrderDate AS DATE) AS SalesDate,
+    COUNT(DISTINCT o.OrderID) AS OrderCount,
+    SUM(o.TotalAmount) AS GrossSales,
+    SUM(o.Discount) AS TotalDiscount,
+    SUM(o.Tax) AS TotalTax,
+    SUM(o.FinalAmount) AS NetSales,
+    COUNT(DISTINCT o.CustomerID) AS CustomerCount
+FROM 
+    app.Order o
+WHERE 
+    o.PaymentStatus = 'Paid'
+GROUP BY 
+    CAST(o.OrderDate AS DATE);
+GO
+
+-- View for product sales analysis
+CREATE VIEW app.vw_ProductSalesAnalysis
+AS
+SELECT 
+    p.ProductID,
+    p.ProductCode,
+    p.ProductName,
+    c.CategoryID,
+    c.CategoryName,
+    COUNT(DISTINCT od.OrderID) AS OrderCount,
+    SUM(od.Quantity) AS TotalQuantitySold,
+    SUM(od.TotalPrice) AS TotalSales,
+    AVG(od.UnitPrice) AS AverageSellingPrice,
+    p.CostPrice AS CurrentCostPrice,
+    p.SellPrice AS CurrentSellPrice,
+    SUM(od.Quantity * od.UnitPrice) - SUM(od.Quantity * p.CostPrice) AS EstimatedProfit
+FROM 
+    app.OrderDetail od
+INNER JOIN 
+    app.Order o ON od.OrderID = o.OrderID
+INNER JOIN 
+    app.Product p ON od.ProductID = p.ProductID
+INNER JOIN 
+    app.Category c ON p.CategoryID = c.CategoryID
+WHERE 
+    o.PaymentStatus = 'Paid'
+GROUP BY 
+    p.ProductID, p.ProductCode, p.ProductName, c.CategoryID, c.CategoryName, p.CostPrice, p.SellPrice;
+GO
+
+-- View for employee information
+CREATE VIEW app.vw_EmployeeInfo
+AS
+SELECT 
+    e.EmployeeID,
+    e.FirstName,
+    e.LastName,
+    e.FullName,
+    e.Gender,
+    e.DateOfBirth,
+    e.PhoneNumber,
+    e.Address,
+    e.IdentityCard,
+    e.Position,
+    e.HireDate,
+    e.Salary,
+    e.IsActive,
+    a.AccountID,
+    a.Username,
+    a.Email,
+    r.RoleID,
+    r.RoleName,
+    a.LastLogin,
+    a.IsActive AS AccountIsActive
+FROM 
+    app.Employee e
+LEFT JOIN 
+    app.Account a ON e.AccountID = a.AccountID
+LEFT JOIN 
+    app.Role r ON a.RoleID = r.RoleID;
+GO
+
+-- View for import summary
+CREATE VIEW app.vw_ImportSummary
+AS
+SELECT 
+    i.ImportID,
+    i.ImportCode,
+    i.ImportDate,
+    i.TotalAmount,
+    i.Status,
+    s.SupplierID,
+    s.SupplierName,
+    s.ContactPerson,
+    s.PhoneNumber AS SupplierPhone,
+    e.EmployeeID,
+    e.FullName AS EmployeeName,
+    (SELECT COUNT(*) FROM app.ImportDetail WHERE ImportID = i.ImportID) AS ItemCount
+FROM 
+    app.Import i
+INNER JOIN 
+    app.Supplier s ON i.SupplierID = s.SupplierID
+INNER JOIN 
+    app.Employee e ON i.CreatedBy = e.EmployeeID;
+GO
+
+-- View for inventory transactions
+CREATE VIEW app.vw_InventoryTransactions
+AS
+SELECT 
+    t.TransactionID,
+    t.ProductID,
+    p.ProductCode,
+    p.ProductName,
+    t.TransactionType,
+    t.Quantity,
+    t.PreviousQuantity,
+    t.CurrentQuantity,
+    t.UnitPrice,
+    t.TotalAmount,
+    t.ReferenceID,
+    t.ReferenceType,
+    t.Note,
+    t.TransactionDate,
+    e.EmployeeID,
+    e.FullName AS CreatedByName
+FROM 
+    app.InventoryTransaction t
+INNER JOIN 
+    app.Product p ON t.ProductID = p.ProductID
+LEFT JOIN 
+    app.Employee e ON t.CreatedBy = e.EmployeeID;
+GO
+
+-- View for system activity log
+CREATE VIEW app.vw_ActivityLog
+AS
+SELECT 
+    al.ActivityID,
+    al.ActivityType,
+    al.EntityType,
+    al.EntityID,
+    al.Description,
+    al.IPAddress,
+    al.ActivityDate,
+    a.AccountID,
+    a.Username,
+    e.EmployeeID,
+    e.FullName AS EmployeeName
+FROM 
+    app.ActivityLog al
+INNER JOIN 
+    app.Account a ON al.AccountID = a.AccountID
+LEFT JOIN 
+    app.Employee e ON a.AccountID = e.AccountID;
+GO
+
+PRINT 'Database views created successfully';
+
+--- File: 17_StoredProcedures_Employee.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Stored procedure to get all employees
+CREATE PROCEDURE app.sp_GetAllEmployees
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        e.EmployeeID,
+        e.FirstName,
+        e.LastName,
+        e.FullName,
+        e.Gender,
+        e.DateOfBirth,
+        e.PhoneNumber,
+        e.Address,
+        e.IdentityCard,
+        e.Position,
+        e.HireDate,
+        e.Salary,
+        e.IsActive,
+        a.AccountID,
+        a.Username,
+        r.RoleName
+    FROM 
+        app.Employee e
+    LEFT JOIN 
+        app.Account a ON e.AccountID = a.AccountID
+    LEFT JOIN 
+        app.Role r ON a.RoleID = r.RoleID
+    ORDER BY 
+        e.FullName;
+END
+GO
+
+-- Stored procedure to get employee by ID
+CREATE PROCEDURE app.sp_GetEmployeeByID
+    @EmployeeID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get employee details
+    SELECT 
+        e.EmployeeID,
+        e.FirstName,
+        e.LastName,
+        e.FullName,
+        e.Gender,
+        e.DateOfBirth,
+        e.PhoneNumber,
+        e.Address,
+        e.IdentityCard,
+        e.Position,
+        e.HireDate,
+        e.Salary,
+        e.IsActive,
+        e.CreatedDate,
+        e.ModifiedDate,
+        a.AccountID,
+        a.Username,
+        a.Email,
+        a.RoleID,
+        r.RoleName,
+        a.LastLogin,
+        a.IsActive AS AccountIsActive
+    FROM 
+        app.Employee e
+    LEFT JOIN 
+        app.Account a ON e.AccountID = a.AccountID
+    LEFT JOIN 
+        app.Role r ON a.RoleID = r.RoleID
+    WHERE 
+        e.EmployeeID = @EmployeeID;
+    
+    -- Get employee attendance records
+    SELECT TOP 30
+        AttendanceID,
+        AttendanceDate,
+        TimeIn,
+        TimeOut,
+        Status,
+        Note
+    FROM 
+        app.EmployeeAttendance
+    WHERE 
+        EmployeeID = @EmployeeID
+    ORDER BY 
+        AttendanceDate DESC;
+    
+    -- Get employee schedule
+    SELECT 
+        ScheduleID,
+        WorkDate,
+        StartTime,
+        EndTime
+    FROM 
+        app.EmployeeSchedule
+    WHERE 
+        EmployeeID = @EmployeeID
+        AND WorkDate >= GETDATE()
+    ORDER BY 
+        WorkDate, StartTime;
+    
+    -- Get recent orders processed by employee
+    SELECT TOP 10
+        o.OrderID,
+        o.OrderCode,
+        o.OrderDate,
+        o.FinalAmount,
+        o.PaymentStatus,
+        COUNT(od.OrderDetailID) AS ItemCount
+    FROM 
+        app.Order o
+    INNER JOIN 
+        app.OrderDetail od ON o.OrderID = od.OrderID
+    WHERE 
+        o.EmployeeID = @EmployeeID
+    GROUP BY 
+        o.OrderID, o.OrderCode, o.OrderDate, o.FinalAmount, o.PaymentStatus
+    ORDER BY 
+        o.OrderDate DESC;
+END
+GO
+
+-- Stored procedure to create new employee
+CREATE PROCEDURE app.sp_CreateEmployee
+    @FirstName NVARCHAR(50),
+    @LastName NVARCHAR(50),
+    @Gender NVARCHAR(10) = NULL,
+    @DateOfBirth DATE = NULL,
+    @PhoneNumber NVARCHAR(20) = NULL,
+    @Address NVARCHAR(200) = NULL,
+    @IdentityCard NVARCHAR(20) = NULL,
+    @Position NVARCHAR(50) = NULL,
+    @HireDate DATE = NULL,
+    @Salary DECIMAL(18, 2) = NULL,
+    @AccountID INT = NULL,
+    @CreatedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Insert new employee
+    INSERT INTO app.Employee (
+        FirstName, LastName, Gender, DateOfBirth, 
+        PhoneNumber, Address, IdentityCard, Position, 
+        HireDate, Salary, AccountID, IsActive, CreatedDate
+    )
+    VALUES (
+        @FirstName, @LastName, @Gender, @DateOfBirth, 
+        @PhoneNumber, @Address, @IdentityCard, @Position, 
+        ISNULL(@HireDate, GETDATE()), @Salary, @AccountID, 1, GETDATE()
+    );
+    
+    -- Get the new employee ID
+    DECLARE @EmployeeID INT = SCOPE_IDENTITY();
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @CreatedBy, 'Create', 'Employee', @EmployeeID, 
+        'Created new employee: ' + @FirstName + ' ' + @LastName
+    );
+    
+    -- Return the new employee ID
+    SELECT @EmployeeID AS EmployeeID;
+END
+GO
+
+-- Stored procedure to update employee
+CREATE PROCEDURE app.sp_UpdateEmployee
+    @EmployeeID INT,
+    @FirstName NVARCHAR(50),
+    @LastName NVARCHAR(50),
+    @Gender NVARCHAR(10) = NULL,
+    @DateOfBirth DATE = NULL,
+    @PhoneNumber NVARCHAR(20) = NULL,
+    @Address NVARCHAR(200) = NULL,
+    @IdentityCard NVARCHAR(20) = NULL,
+    @Position NVARCHAR(50) = NULL,
+    @HireDate DATE = NULL,
+    @Salary DECIMAL(18, 2) = NULL,
+    @AccountID INT = NULL,
+    @IsActive BIT = 1,
+    @ModifiedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get current employee data for logging
+    DECLARE @OldFirstName NVARCHAR(50), @OldLastName NVARCHAR(50);
+    SELECT 
+        @OldFirstName = FirstName,
+        @OldLastName = LastName
+    FROM 
+        app.Employee 
+    WHERE 
+        EmployeeID = @EmployeeID;
+    
+    -- Update employee
+    UPDATE app.Employee
+    SET 
+        FirstName = @FirstName,
+        LastName = @LastName,
+        Gender = @Gender,
+        DateOfBirth = @DateOfBirth,
+        PhoneNumber = @PhoneNumber,
+        Address = @Address,
+        IdentityCard = @IdentityCard,
+        Position = @Position,
+        HireDate = @HireDate,
+        Salary = @Salary,
+        AccountID = @AccountID,
+        IsActive = @IsActive,
+        ModifiedDate = GETDATE()
+    WHERE 
+        EmployeeID = @EmployeeID;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @ModifiedBy, 'Update', 'Employee', @EmployeeID, 
+        'Updated employee: ' + @OldFirstName + ' ' + @OldLastName
+    );
+    
+    -- Return success
+    SELECT 'Employee updated successfully' AS Result;
+END
+GO
+
+-- Stored procedure to create employee with account
+CREATE PROCEDURE app.sp_CreateEmployeeWithAccount
+    @FirstName NVARCHAR(50),
+    @LastName NVARCHAR(50),
+    @Gender NVARCHAR(10) = NULL,
+    @DateOfBirth DATE = NULL,
+    @PhoneNumber NVARCHAR(20) = NULL,
+    @Address NVARCHAR(200) = NULL,
+    @IdentityCard NVARCHAR(20) = NULL,
+    @Position NVARCHAR(50) = NULL,
+    @HireDate DATE = NULL,
+    @Salary DECIMAL(18, 2) = NULL,
+    @Username NVARCHAR(50),
+    @PasswordHash NVARCHAR(128),
+    @PasswordSalt NVARCHAR(128),
+    @Email NVARCHAR(100) = NULL,
+    @RoleID INT,
+    @CreatedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    BEGIN TRANSACTION;
+    
+    BEGIN TRY
+        -- Check if username already exists
+        IF EXISTS (SELECT 1 FROM app.Account WHERE Username = @Username)
+        BEGIN
+            RAISERROR('Username already exists', 16, 1);
+            ROLLBACK;
+            RETURN;
+        END
+        
+        -- Create account
+        INSERT INTO app.Account (
+            Username, PasswordHash, PasswordSalt, Email, RoleID, CreatedDate
+        )
+        VALUES (
+            @Username, @PasswordHash, @PasswordSalt, @Email, @RoleID, GETDATE()
+        );
+        
+        -- Get the new account ID
+        DECLARE @AccountID INT = SCOPE_IDENTITY();
+        
+        -- Create employee
+        INSERT INTO app.Employee (
+            FirstName, LastName, Gender, DateOfBirth, 
+            PhoneNumber, Address, IdentityCard, Position, 
+            HireDate, Salary, AccountID, IsActive, CreatedDate
+        )
+        VALUES (
+            @FirstName, @LastName, @Gender, @DateOfBirth, 
+            @PhoneNumber, @Address, @IdentityCard, @Position, 
+            ISNULL(@HireDate, GETDATE()), @Salary, @AccountID, 1, GETDATE()
+        );
+        
+        -- Get the new employee ID
+        DECLARE @EmployeeID INT = SCOPE_IDENTITY();
+        
+        -- Log the activity
+        INSERT INTO app.ActivityLog (
+            AccountID, ActivityType, EntityType, EntityID, Description
+        )
+        VALUES (
+            @CreatedBy, 'Create', 'Employee', @EmployeeID, 
+            'Created new employee with account: ' + @FirstName + ' ' + @LastName + ' (' + @Username + ')'
+        );
+        
+        COMMIT;
+        
+        -- Return the new IDs
+        SELECT @EmployeeID AS EmployeeID, @AccountID AS AccountID;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK;
+        THROW;
+    END CATCH
+END
+GO
+
+-- Stored procedure to search employees
+CREATE PROCEDURE app.sp_SearchEmployees
+    @SearchTerm NVARCHAR(100),
+    @IsActive BIT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        e.EmployeeID,
+        e.FirstName,
+        e.LastName,
+        e.FullName,
+        e.Gender,
+        e.PhoneNumber,
+        e.Position,
+        e.HireDate,
+        e.Salary,
+        e.IsActive,
+        a.Username,
+        r.RoleName
+    FROM 
+        app.Employee e
+    LEFT JOIN 
+        app.Account a ON e.AccountID = a.AccountID
+    LEFT JOIN 
+        app.Role r ON a.RoleID = r.RoleID
+    WHERE 
+        (
+            e.FirstName LIKE '%' + @SearchTerm + '%' OR
+            e.LastName LIKE '%' + @SearchTerm + '%' OR
+            e.FullName LIKE '%' + @SearchTerm + '%' OR
+            e.PhoneNumber LIKE '%' + @SearchTerm + '%' OR
+            e.Position LIKE '%' + @SearchTerm + '%' OR
+            e.IdentityCard LIKE '%' + @SearchTerm + '%' OR
+            a.Username LIKE '%' + @SearchTerm + '%'
+        )
+        AND (@IsActive IS NULL OR e.IsActive = @IsActive)
+    ORDER BY 
+        e.FullName;
+END
+GO
+
+-- Stored procedure to record employee attendance
+CREATE PROCEDURE app.sp_RecordEmployeeAttendance
+    @EmployeeID INT,
+    @AttendanceDate DATE,
+    @TimeIn TIME = NULL,
+    @TimeOut TIME = NULL,
+    @Status NVARCHAR(20),
+    @Note NVARCHAR(200) = NULL,
+    @RecordedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if attendance record already exists for this date
+    IF EXISTS (SELECT 1 FROM app.EmployeeAttendance WHERE EmployeeID = @EmployeeID AND AttendanceDate = @AttendanceDate)
+    BEGIN
+        -- Update existing record
+        UPDATE app.EmployeeAttendance
+        SET 
+            TimeIn = ISNULL(@TimeIn, TimeIn),
+            TimeOut = ISNULL(@TimeOut, TimeOut),
+            Status = @Status,
+            Note = ISNULL(@Note, Note)
+        WHERE 
+            EmployeeID = @EmployeeID AND AttendanceDate = @AttendanceDate;
+    END
+    ELSE
+    BEGIN
+        -- Insert new record
+        INSERT INTO app.EmployeeAttendance (
+            EmployeeID, AttendanceDate, TimeIn, TimeOut, Status, Note
+        )
+        VALUES (
+            @EmployeeID, @AttendanceDate, @TimeIn, @TimeOut, @Status, @Note
+        );
+    END
+    
+    -- Get employee name for logging
+    DECLARE @EmployeeName NVARCHAR(100);
+    SELECT @EmployeeName = FullName FROM app.Employee WHERE EmployeeID = @EmployeeID;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @RecordedBy, 'Record', 'Attendance', @EmployeeID, 
+        'Recorded attendance for ' + @EmployeeName + ' on ' + CONVERT(NVARCHAR, @AttendanceDate, 103) + 
+        ' - Status: ' + @Status
+    );
+    
+    -- Return success
+    SELECT 'Attendance recorded successfully' AS Result;
+END
+GO
+
+PRINT 'Employee management stored procedures created successfully';
+
+--- File: 18_StoredProcedures_Customer.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Stored procedure to get all customers
+CREATE PROCEDURE app.sp_GetAllCustomers
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        c.CustomerID,
+        c.CustomerName,
+        c.PhoneNumber,
+        c.Email,
+        c.Address,
+        c.MembershipLevel,
+        c.Points,
+        c.CreatedDate,
+        c.ModifiedDate,
+        (SELECT COUNT(*) FROM app.Order WHERE CustomerID = c.CustomerID) AS OrderCount,
+        (SELECT SUM(FinalAmount) FROM app.Order WHERE CustomerID = c.CustomerID AND PaymentStatus = 'Paid') AS TotalSpent,
+        (SELECT MAX(OrderDate) FROM app.Order WHERE CustomerID = c.CustomerID) AS LastOrderDate
+    FROM 
+        app.Customer c
+    ORDER BY 
+        c.CustomerName;
+END
+GO
+
+-- Stored procedure to get customer by ID
+CREATE PROCEDURE app.sp_GetCustomerByID
+    @CustomerID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get customer details
+    SELECT 
+        c.CustomerID,
+        c.CustomerName,
+        c.PhoneNumber,
+        c.Email,
+        c.Address,
+        c.MembershipLevel,
+        c.Points,
+        c.CreatedDate,
+        c.ModifiedDate
+    FROM 
+        app.Customer c
+    WHERE 
+        c.CustomerID = @CustomerID;
+    
+    -- Get recent orders
+    SELECT TOP 10
+        o.OrderID,
+        o.OrderCode,
+        o.OrderDate,
+        o.TotalAmount,
+        o.Discount,
+        o.Tax,
+        o.FinalAmount,
+        o.PaymentStatus,
+        pm.MethodName AS PaymentMethod,
+        e.FullName AS EmployeeName,
+        (SELECT COUNT(*) FROM app.OrderDetail WHERE OrderID = o.OrderID) AS ItemCount
+    FROM 
+        app.Order o
+    INNER JOIN 
+        app.PaymentMethod pm ON o.PaymentMethodID = pm.PaymentMethodID
+    INNER JOIN 
+        app.Employee e ON o.EmployeeID = e.EmployeeID
+    WHERE 
+        o.CustomerID = @CustomerID
+    ORDER BY 
+        o.OrderDate DESC;
+    
+    -- Get purchase statistics
+    SELECT 
+        COUNT(DISTINCT o.OrderID) AS TotalOrders,
+        SUM(o.FinalAmount) AS TotalSpent,
+        AVG(o.FinalAmount) AS AverageOrderValue,
+        MIN(o.OrderDate) AS FirstOrderDate,
+        MAX(o.OrderDate) AS LastOrderDate,
+        DATEDIFF(DAY, MAX(o.OrderDate), GETDATE()) AS DaysSinceLastOrder
+    FROM 
+        app.Order o
+    WHERE 
+        o.CustomerID = @CustomerID
+        AND o.PaymentStatus = 'Paid';
+    
+    -- Get top purchased products
+    SELECT TOP 5
+        p.ProductID,
+        p.ProductName,
+        SUM(od.Quantity) AS TotalQuantity,
+        COUNT(DISTINCT o.OrderID) AS OrderCount
+    FROM 
+        app.OrderDetail od
+    INNER JOIN 
+        app.Order o ON od.OrderID = o.OrderID
+    INNER JOIN 
+        app.Product p ON od.ProductID = p.ProductID
+    WHERE 
+        o.CustomerID = @CustomerID
+        AND o.PaymentStatus = 'Paid'
+    GROUP BY 
+        p.ProductID, p.ProductName
+    ORDER BY 
+        SUM(od.Quantity) DESC;
+END
+GO
+
+-- Stored procedure to create new customer
+CREATE PROCEDURE app.sp_CreateCustomer
+    @CustomerName NVARCHAR(100),
+    @PhoneNumber NVARCHAR(20) = NULL,
+    @Email NVARCHAR(100) = NULL,
+    @Address NVARCHAR(200) = NULL,
+    @MembershipLevel NVARCHAR(20) = 'Regular',
+    @Points INT = 0,
+    @CreatedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if phone number already exists
+    IF @PhoneNumber IS NOT NULL AND EXISTS (SELECT 1 FROM app.Customer WHERE PhoneNumber = @PhoneNumber)
+    BEGIN
+        RAISERROR('Phone number already exists', 16, 1);
+        RETURN;
+    END
+    
+    -- Insert new customer
+    INSERT INTO app.Customer (
+        CustomerName, PhoneNumber, Email, Address, MembershipLevel, Points, CreatedDate
+    )
+    VALUES (
+        @CustomerName, @PhoneNumber, @Email, @Address, @MembershipLevel, @Points, GETDATE()
+    );
+    
+    -- Get the new customer ID
+    DECLARE @CustomerID INT = SCOPE_IDENTITY();
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @CreatedBy, 'Create', 'Customer', @CustomerID, 
+        'Created new customer: ' + @CustomerName
+    );
+    
+    -- Return the new customer ID
+    SELECT @CustomerID AS CustomerID;
+END
+GO
+
+-- Stored procedure to update customer
+CREATE PROCEDURE app.sp_UpdateCustomer
+    @CustomerID INT,
+    @CustomerName NVARCHAR(100),
+    @PhoneNumber NVARCHAR(20) = NULL,
+    @Email NVARCHAR(100) = NULL,
+    @Address NVARCHAR(200) = NULL,
+    @MembershipLevel NVARCHAR(20) = 'Regular',
+    @Points INT = NULL,
+    @ModifiedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if phone number already exists (excluding current customer)
+    IF @PhoneNumber IS NOT NULL AND EXISTS (
+        SELECT 1 
+        FROM app.Customer 
+        WHERE PhoneNumber = @PhoneNumber 
+        AND CustomerID <> @CustomerID
+    )
+    BEGIN
+        RAISERROR('Phone number already exists', 16, 1);
+        RETURN;
+    END
+    
+    -- Get current customer data for logging
+    DECLARE @OldCustomerName NVARCHAR(100), @OldPoints INT;
+    SELECT 
+        @OldCustomerName = CustomerName,
+        @OldPoints = Points
+    FROM 
+        app.Customer 
+    WHERE 
+        CustomerID = @CustomerID;
+    
+    -- Update customer
+    UPDATE app.Customer
+    SET 
+        CustomerName = @CustomerName,
+        PhoneNumber = @PhoneNumber,
+        Email = @Email,
+        Address = @Address,
+        MembershipLevel = @MembershipLevel,
+        Points = ISNULL(@Points, Points),
+        ModifiedDate = GETDATE()
+    WHERE 
+        CustomerID = @CustomerID;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @ModifiedBy, 'Update', 'Customer', @CustomerID, 
+        'Updated customer: ' + @OldCustomerName
+    );
+    
+    -- Return success
+    SELECT 'Customer updated successfully' AS Result;
+END
+GO
+
+-- Stored procedure to search customers
+CREATE PROCEDURE app.sp_SearchCustomers
+    @SearchTerm NVARCHAR(100)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        c.CustomerID,
+        c.CustomerName,
+        c.PhoneNumber,
+        c.Email,
+        c.Address,
+        c.MembershipLevel,
+        c.Points,
+        (SELECT COUNT(*) FROM app.Order WHERE CustomerID = c.CustomerID) AS OrderCount,
+        (SELECT SUM(FinalAmount) FROM app.Order WHERE CustomerID = c.CustomerID AND PaymentStatus = 'Paid') AS TotalSpent,
+        (SELECT MAX(OrderDate) FROM app.Order WHERE CustomerID = c.CustomerID) AS LastOrderDate
+    FROM 
+        app.Customer c
+    WHERE 
+        c.CustomerName LIKE '%' + @SearchTerm + '%' OR
+        c.PhoneNumber LIKE '%' + @SearchTerm + '%' OR
+        c.Email LIKE '%' + @SearchTerm + '%' OR
+        c.Address LIKE '%' + @SearchTerm + '%'
+    ORDER BY 
+        c.CustomerName;
+END
+GO
+
+-- Stored procedure to add/subtract customer points
+CREATE PROCEDURE app.sp_UpdateCustomerPoints
+    @CustomerID INT,
+    @PointsChange INT,
+    @Reason NVARCHAR(200),
+    @ModifiedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get current points
+    DECLARE @CurrentPoints INT, @CustomerName NVARCHAR(100);
+    SELECT 
+        @CurrentPoints = Points,
+        @CustomerName = CustomerName
+    FROM 
+        app.Customer 
+    WHERE 
+        CustomerID = @CustomerID;
+    
+    -- Update points
+    UPDATE app.Customer
+    SET 
+        Points = Points + @PointsChange,
+        ModifiedDate = GETDATE()
+    WHERE 
+        CustomerID = @CustomerID;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @ModifiedBy, 'Update', 'CustomerPoints', @CustomerID, 
+        'Updated points for ' + @CustomerName + ' from ' + 
+        CAST(@CurrentPoints AS NVARCHAR) + ' to ' + CAST((@CurrentPoints + @PointsChange) AS NVARCHAR) + 
+        ' (' + CASE WHEN @PointsChange > 0 THEN '+' ELSE '' END + CAST(@PointsChange AS NVARCHAR) + ')' +
+        ' - Reason: ' + @Reason
+    );
+    
+    -- Return success
+    SELECT 'Customer points updated successfully' AS Result;
+END
+GO
+
+-- Stored procedure to get top customers
+CREATE PROCEDURE app.sp_GetTopCustomers
+    @StartDate DATE = NULL,
+    @EndDate DATE = NULL,
+    @TopCount INT = 10
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT TOP (@TopCount)
+        c.CustomerID,
+        c.CustomerName,
+        c.PhoneNumber,
+        c.Email,
+        c.MembershipLevel,
+        c.Points,
+        COUNT(DISTINCT o.OrderID) AS OrderCount,
+        SUM(o.FinalAmount) AS TotalSpent,
+        AVG(o.FinalAmount) AS AverageOrderValue,
+        MAX(o.OrderDate) AS LastOrderDate
+    FROM 
+        app.Customer c
+    INNER JOIN 
+        app.Order o ON c.CustomerID = o.CustomerID
+    WHERE 
+        o.PaymentStatus = 'Paid'
+        AND (@StartDate IS NULL OR o.OrderDate >= @StartDate)
+        AND (@EndDate IS NULL OR o.OrderDate <= @EndDate)
+    GROUP BY 
+        c.CustomerID, c.CustomerName, c.PhoneNumber, c.Email, c.MembershipLevel, c.Points
+    ORDER BY 
+        SUM(o.FinalAmount) DESC;
+END
+GO
+
+PRINT 'Customer management stored procedures created successfully';
+
+--- File: 19_StoredProcedures_Expense.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Stored procedure to get all expense types
+CREATE PROCEDURE app.sp_GetAllExpenseTypes
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        ExpenseTypeID,
+        TypeName,
+        Description,
+        IsActive
+    FROM 
+        app.ExpenseType
+    ORDER BY 
+        TypeName;
+END
+GO
+
+-- Stored procedure to create expense type
+CREATE PROCEDURE app.sp_CreateExpenseType
+    @TypeName NVARCHAR(100),
+    @Description NVARCHAR(200) = NULL,
+    @CreatedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if expense type already exists
+    IF EXISTS (SELECT 1 FROM app.ExpenseType WHERE TypeName = @TypeName)
+    BEGIN
+        RAISERROR('Expense type already exists', 16, 1);
+        RETURN;
+    END
+    
+    -- Insert new expense type
+    INSERT INTO app.ExpenseType (
+        TypeName, Description, IsActive
+    )
+    VALUES (
+        @TypeName, @Description, 1
+    );
+    
+    -- Get the new expense type ID
+    DECLARE @ExpenseTypeID INT = SCOPE_IDENTITY();
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @CreatedBy, 'Create', 'ExpenseType', @ExpenseTypeID, 
+        'Created new expense type: ' + @TypeName
+    );
+    
+    -- Return the new expense type ID
+    SELECT @ExpenseTypeID AS ExpenseTypeID;
+END
+GO
+
+-- Stored procedure to update expense type
+CREATE PROCEDURE app.sp_UpdateExpenseType
+    @ExpenseTypeID INT,
+    @TypeName NVARCHAR(100),
+    @Description NVARCHAR(200) = NULL,
+    @IsActive BIT = 1,
+    @ModifiedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if expense type already exists (excluding current type)
+    IF EXISTS (
+        SELECT 1 
+        FROM app.ExpenseType 
+        WHERE TypeName = @TypeName 
+        AND ExpenseTypeID <> @ExpenseTypeID
+    )
+    BEGIN
+        RAISERROR('Expense type already exists', 16, 1);
+        RETURN;
+    END
+    
+    -- Get current expense type data for logging
+    DECLARE @OldTypeName NVARCHAR(100);
+    SELECT @OldTypeName = TypeName FROM app.ExpenseType WHERE ExpenseTypeID = @ExpenseTypeID;
+    
+    -- Update expense type
+    UPDATE app.ExpenseType
+    SET 
+        TypeName = @TypeName,
+        Description = @Description,
+        IsActive = @IsActive
+    WHERE 
+        ExpenseTypeID = @ExpenseTypeID;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @ModifiedBy, 'Update', 'ExpenseType', @ExpenseTypeID, 
+        'Updated expense type: ' + @OldTypeName
+    );
+    
+    -- Return success
+    SELECT 'Expense type updated successfully' AS Result;
+END
+GO
+
+-- Stored procedure to get all expenses
+CREATE PROCEDURE app.sp_GetAllExpenses
+    @StartDate DATE = NULL,
+    @EndDate DATE = NULL,
+    @ExpenseTypeID INT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        e.ExpenseID,
+        e.Amount,
+        e.ExpenseDate,
+        e.Description,
+        et.ExpenseTypeID,
+        et.TypeName AS ExpenseType,
+        emp.EmployeeID,
+        emp.FullName AS EmployeeName,
+        e.CreatedDate
+    FROM 
+        app.Expense e
+    INNER JOIN 
+        app.ExpenseType et ON e.ExpenseTypeID = et.ExpenseTypeID
+    INNER JOIN 
+        app.Employee emp ON e.EmployeeID = emp.EmployeeID
+    WHERE 
+        (@StartDate IS NULL OR e.ExpenseDate >= @StartDate)
+        AND (@EndDate IS NULL OR e.ExpenseDate <= @EndDate)
+        AND (@ExpenseTypeID IS NULL OR e.ExpenseTypeID = @ExpenseTypeID)
+    ORDER BY 
+        e.ExpenseDate DESC, e.CreatedDate DESC;
+END
+GO
+
+-- Stored procedure to get expense by ID
+CREATE PROCEDURE app.sp_GetExpenseByID
+    @ExpenseID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        e.ExpenseID,
+        e.Amount,
+        e.ExpenseDate,
+        e.Description,
+        et.ExpenseTypeID,
+        et.TypeName AS ExpenseType,
+        emp.EmployeeID,
+        emp.FullName AS EmployeeName,
+        e.CreatedDate,
+        e.ModifiedDate
+    FROM 
+        app.Expense e
+    INNER JOIN 
+        app.ExpenseType et ON e.ExpenseTypeID = et.ExpenseTypeID
+    INNER JOIN 
+        app.Employee emp ON e.EmployeeID = emp.EmployeeID
+    WHERE 
+        e.ExpenseID = @ExpenseID;
+END
+GO
+
+-- Stored procedure to create expense
+CREATE PROCEDURE app.sp_CreateExpense
+    @ExpenseTypeID INT,
+    @Amount DECIMAL(18, 2),
+    @ExpenseDate DATE,
+    @Description NVARCHAR(500) = NULL,
+    @EmployeeID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Insert new expense
+    INSERT INTO app.Expense (
+        ExpenseTypeID, Amount, ExpenseDate, Description, EmployeeID, CreatedDate
+    )
+    VALUES (
+        @ExpenseTypeID, @Amount, @ExpenseDate, @Description, @EmployeeID, GETDATE()
+    );
+    
+    -- Get the new expense ID
+    DECLARE @ExpenseID INT = SCOPE_IDENTITY();
+    
+    -- Get expense type name for logging
+    DECLARE @ExpenseTypeName NVARCHAR(100);
+    SELECT @ExpenseTypeName = TypeName FROM app.ExpenseType WHERE ExpenseTypeID = @ExpenseTypeID;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @EmployeeID, 'Create', 'Expense', @ExpenseID, 
+        'Created new expense: ' + @ExpenseTypeName + ' - ' + CAST(@Amount AS NVARCHAR) + ' VND'
+    );
+    
+    -- Return the new expense ID
+    SELECT @ExpenseID AS ExpenseID;
+END
+GO
+
+-- Stored procedure to update expense
+CREATE PROCEDURE app.sp_UpdateExpense
+    @ExpenseID INT,
+    @ExpenseTypeID INT,
+    @Amount DECIMAL(18, 2),
+    @ExpenseDate DATE,
+    @Description NVARCHAR(500) = NULL,
+    @ModifiedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get current expense data for logging
+    DECLARE @OldAmount DECIMAL(18, 2), @OldExpenseTypeID INT, @OldExpenseTypeName NVARCHAR(100);
+    SELECT 
+        @OldAmount = e.Amount,
+        @OldExpenseTypeID = e.ExpenseTypeID
+    FROM 
+        app.Expense e
+    WHERE 
+        e.ExpenseID = @ExpenseID;
+    
+    SELECT @OldExpenseTypeName = TypeName FROM app.ExpenseType WHERE ExpenseTypeID = @OldExpenseTypeID;
+    
+    -- Update expense
+    UPDATE app.Expense
+    SET 
+        ExpenseTypeID = @ExpenseTypeID,
+        Amount = @Amount,
+        ExpenseDate = @ExpenseDate,
+        Description = @Description,
+        ModifiedDate = GETDATE()
+    WHERE 
+        ExpenseID = @ExpenseID;
+    
+    -- Get new expense type name for logging
+    DECLARE @NewExpenseTypeName NVARCHAR(100);
+    SELECT @NewExpenseTypeName = TypeName FROM app.ExpenseType WHERE ExpenseTypeID = @ExpenseTypeID;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @ModifiedBy, 'Update', 'Expense', @ExpenseID, 
+        'Updated expense from ' + @OldExpenseTypeName + ' - ' + CAST(@OldAmount AS NVARCHAR) + ' VND' +
+        ' to ' + @NewExpenseTypeName + ' - ' + CAST(@Amount AS NVARCHAR) + ' VND'
+    );
+    
+    -- Return success
+    SELECT 'Expense updated successfully' AS Result;
+END
+GO
+
+-- Stored procedure to delete expense
+CREATE PROCEDURE app.sp_DeleteExpense
+    @ExpenseID INT,
+    @DeletedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get expense data for logging
+    DECLARE @Amount DECIMAL(18, 2), @ExpenseTypeName NVARCHAR(100);
+    SELECT 
+        @Amount = e.Amount,
+        @ExpenseTypeName = et.TypeName
+    FROM 
+        app.Expense e
+    INNER JOIN 
+        app.ExpenseType et ON e.ExpenseTypeID = et.ExpenseTypeID
+    WHERE 
+        e.ExpenseID = @ExpenseID;
+    
+    -- Delete expense
+    DELETE FROM app.Expense WHERE ExpenseID = @ExpenseID;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @DeletedBy, 'Delete', 'Expense', @ExpenseID, 
+        'Deleted expense: ' + @ExpenseTypeName + ' - ' + CAST(@Amount AS NVARCHAR) + ' VND'
+    );
+    
+    -- Return success
+    SELECT 'Expense deleted successfully' AS Result;
+END
+GO
+
+-- Stored procedure to get expense summary by type
+CREATE PROCEDURE app.sp_GetExpenseSummaryByType
+    @StartDate DATE,
+    @EndDate DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        et.ExpenseTypeID,
+        et.TypeName,
+        COUNT(e.ExpenseID) AS ExpenseCount,
+        SUM(e.Amount) AS TotalAmount,
+        MIN(e.ExpenseDate) AS FirstExpenseDate,
+        MAX(e.ExpenseDate) AS LastExpenseDate
+    FROM 
+        app.ExpenseType et
+    LEFT JOIN 
+        app.Expense e ON et.ExpenseTypeID = e.ExpenseTypeID
+        AND e.ExpenseDate BETWEEN @StartDate AND @EndDate
+    GROUP BY 
+        et.ExpenseTypeID, et.TypeName
+    ORDER BY 
+        SUM(e.Amount) DESC;
+END
+GO
+
+-- Stored procedure to get expense summary by date
+CREATE PROCEDURE app.sp_GetExpenseSummaryByDate
+    @StartDate DATE,
+    @EndDate DATE,
+    @GroupBy NVARCHAR(10) = 'Day' -- Day, Week, Month
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    IF @GroupBy = 'Day'
+    BEGIN
+        SELECT 
+            CAST(e.ExpenseDate AS DATE) AS ExpenseDate,
+            COUNT(e.ExpenseID) AS ExpenseCount,
+            SUM(e.Amount) AS TotalAmount
+        FROM 
+            app.Expense e
+        WHERE 
+            e.ExpenseDate BETWEEN @StartDate AND @EndDate
+        GROUP BY 
+            CAST(e.ExpenseDate AS DATE)
+        ORDER BY 
+            CAST(e.ExpenseDate AS DATE);
+    END
+    ELSE IF @GroupBy = 'Week'
+    BEGIN
+        SELECT 
+            DATEPART(YEAR, e.ExpenseDate) AS Year,
+            DATEPART(WEEK, e.ExpenseDate) AS WeekNumber,
+            MIN(e.ExpenseDate) AS WeekStart,
+            COUNT(e.ExpenseID) AS ExpenseCount,
+            SUM(e.Amount) AS TotalAmount
+        FROM 
+            app.Expense e
+        WHERE 
+            e.ExpenseDate BETWEEN @StartDate AND @EndDate
+        GROUP BY 
+            DATEPART(YEAR, e.ExpenseDate), DATEPART(WEEK, e.ExpenseDate)
+        ORDER BY 
+            DATEPART(YEAR, e.ExpenseDate), DATEPART(WEEK, e.ExpenseDate);
+    END
+    ELSE IF @GroupBy = 'Month'
+    BEGIN
+        SELECT 
+            DATEPART(YEAR, e.ExpenseDate) AS Year,
+            DATEPART(MONTH, e.ExpenseDate) AS Month,
+            DATENAME(MONTH, e.ExpenseDate) AS MonthName,
+            COUNT(e.ExpenseID) AS ExpenseCount,
+            SUM(e.Amount) AS TotalAmount
+        FROM 
+            app.Expense e
+        WHERE 
+            e.ExpenseDate BETWEEN @StartDate AND @EndDate
+        GROUP BY 
+            DATEPART(YEAR, e.ExpenseDate), DATEPART(MONTH, e.ExpenseDate), DATENAME(MONTH, e.ExpenseDate)
+        ORDER BY 
+            DATEPART(YEAR, e.ExpenseDate), DATEPART(MONTH, e.ExpenseDate);
+    END
+END
+GO
+
+PRINT 'Expense management stored procedures created successfully';
+
+--- File: 20_StoredProcedures_System.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Stored procedure to get all system configurations
+CREATE PROCEDURE app.sp_GetAllSystemConfigs
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        ConfigID,
+        ConfigKey,
+        ConfigValue,
+        Description,
+        DataType,
+        IsReadOnly,
+        CreatedDate,
+        ModifiedDate
+    FROM 
+        app.SystemConfig
+    ORDER BY 
+        ConfigKey;
+END
+GO
+
+-- Stored procedure to get system config by key
+CREATE PROCEDURE app.sp_GetSystemConfigByKey
+    @ConfigKey NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        ConfigID,
+        ConfigKey,
+        ConfigValue,
+        Description,
+        DataType,
+        IsReadOnly,
+        CreatedDate,
+        ModifiedDate
+    FROM 
+        app.SystemConfig
+    WHERE 
+        ConfigKey = @ConfigKey;
+END
+GO
+
+-- Stored procedure to update system config
+CREATE PROCEDURE app.sp_UpdateSystemConfig
+    @ConfigKey NVARCHAR(50),
+    @ConfigValue NVARCHAR(MAX),
+    @ModifiedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if config exists
+    IF NOT EXISTS (SELECT 1 FROM app.SystemConfig WHERE ConfigKey = @ConfigKey)
+    BEGIN
+        RAISERROR('Configuration key does not exist', 16, 1);
+        RETURN;
+    END
+    
+    -- Check if config is read-only
+    DECLARE @IsReadOnly BIT;
+    SELECT @IsReadOnly = IsReadOnly FROM app.SystemConfig WHERE ConfigKey = @ConfigKey;
+    
+    IF @IsReadOnly = 1
+    BEGIN
+        RAISERROR('Configuration is read-only and cannot be modified', 16, 1);
+        RETURN;
+    END
+    
+    -- Get old value for logging
+    DECLARE @OldValue NVARCHAR(MAX);
+    SELECT @OldValue = ConfigValue FROM app.SystemConfig WHERE ConfigKey = @ConfigKey;
+    
+    -- Update config
+    UPDATE app.SystemConfig
+    SET 
+        ConfigValue = @ConfigValue,
+        ModifiedDate = GETDATE()
+    WHERE 
+        ConfigKey = @ConfigKey;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description, OldValue, NewValue
+    )
+    VALUES (
+        @ModifiedBy, 'Update', 'SystemConfig', 
+        (SELECT ConfigID FROM app.SystemConfig WHERE ConfigKey = @ConfigKey), 
+        'Updated system configuration: ' + @ConfigKey,
+        @OldValue,
+        @ConfigValue
+    );
+    
+    -- Return success
+    SELECT 'Configuration updated successfully' AS Result;
+END
+GO
+
+-- Stored procedure to create system config
+CREATE PROCEDURE app.sp_CreateSystemConfig
+    @ConfigKey NVARCHAR(50),
+    @ConfigValue NVARCHAR(MAX),
+    @Description NVARCHAR(200) = NULL,
+    @DataType NVARCHAR(20) = 'String',
+    @IsReadOnly BIT = 0,
+    @CreatedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if config already exists
+    IF EXISTS (SELECT 1 FROM app.SystemConfig WHERE ConfigKey = @ConfigKey)
+    BEGIN
+        RAISERROR('Configuration key already exists', 16, 1);
+        RETURN;
+    END
+    
+    -- Insert new config
+    INSERT INTO app.SystemConfig (
+        ConfigKey, ConfigValue, Description, DataType, IsReadOnly, CreatedDate
+    )
+    VALUES (
+        @ConfigKey, @ConfigValue, @Description, @DataType, @IsReadOnly, GETDATE()
+    );
+    
+    -- Get the new config ID
+    DECLARE @ConfigID INT = SCOPE_IDENTITY();
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description, NewValue
+    )
+    VALUES (
+        @CreatedBy, 'Create', 'SystemConfig', @ConfigID, 
+        'Created new system configuration: ' + @ConfigKey,
+        @ConfigValue
+    );
+    
+    -- Return the new config ID
+    SELECT @ConfigID AS ConfigID;
+END
+GO
+
+-- Stored procedure to delete system config
+CREATE PROCEDURE app.sp_DeleteSystemConfig
+    @ConfigKey NVARCHAR(50),
+    @DeletedBy INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if config exists
+    IF NOT EXISTS (SELECT 1 FROM app.SystemConfig WHERE ConfigKey = @ConfigKey)
+    BEGIN
+        RAISERROR('Configuration key does not exist', 16, 1);
+        RETURN;
+    END
+    
+    -- Check if config is read-only
+    DECLARE @IsReadOnly BIT;
+    SELECT @IsReadOnly = IsReadOnly FROM app.SystemConfig WHERE ConfigKey = @ConfigKey;
+    
+    IF @IsReadOnly = 1
+    BEGIN
+        RAISERROR('Configuration is read-only and cannot be deleted', 16, 1);
+        RETURN;
+    END
+    
+    -- Get config data for logging
+    DECLARE @ConfigID INT, @ConfigValue NVARCHAR(MAX);
+    SELECT 
+        @ConfigID = ConfigID,
+        @ConfigValue = ConfigValue
+    FROM 
+        app.SystemConfig 
+    WHERE 
+        ConfigKey = @ConfigKey;
+    
+    -- Delete config
+    DELETE FROM app.SystemConfig WHERE ConfigKey = @ConfigKey;
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description, OldValue
+    )
+    VALUES (
+        @DeletedBy, 'Delete', 'SystemConfig', @ConfigID, 
+        'Deleted system configuration: ' + @ConfigKey,
+        @ConfigValue
+    );
+    
+    -- Return success
+    SELECT 'Configuration deleted successfully' AS Result;
+END
+GO
+
+-- Stored procedure to log system event
+CREATE PROCEDURE app.sp_LogSystemEvent
+    @LogLevel NVARCHAR(20),
+    @Message NVARCHAR(MAX),
+    @Source NVARCHAR(100) = NULL,
+    @Exception NVARCHAR(MAX) = NULL,
+    @StackTrace NVARCHAR(MAX) = NULL,
+    @AccountID INT = NULL,
+    @IPAddress NVARCHAR(50) = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    INSERT INTO app.SystemLog (
+        LogLevel, Message, Source, Exception, StackTrace, AccountID, IPAddress, LogDate
+    )
+    VALUES (
+        @LogLevel, @Message, @Source, @Exception, @StackTrace, @AccountID, @IPAddress, GETDATE()
+    );
+    
+    -- Return the new log ID
+    SELECT SCOPE_IDENTITY() AS LogID;
+END
+GO
+
+-- Stored procedure to get system logs
+CREATE PROCEDURE app.sp_GetSystemLogs
+    @StartDate DATETIME = NULL,
+    @EndDate DATETIME = NULL,
+    @LogLevel NVARCHAR(20) = NULL,
+    @Source NVARCHAR(100) = NULL,
+    @AccountID INT = NULL,
+    @MaxRows INT = 1000
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT TOP (@MaxRows)
+        l.LogID,
+        l.LogLevel,
+        l.Message,
+        l.Source,
+        l.Exception,
+        l.StackTrace,
+        l.AccountID,
+        a.Username,
+        l.IPAddress,
+        l.LogDate
+    FROM 
+        app.SystemLog l
+    LEFT JOIN 
+        app.Account a ON l.AccountID = a.AccountID
+    WHERE 
+        (@StartDate IS NULL OR l.LogDate >= @StartDate)
+        AND (@EndDate IS NULL OR l.LogDate <= @EndDate)
+        AND (@LogLevel IS NULL OR l.LogLevel = @LogLevel)
+        AND (@Source IS NULL OR l.Source LIKE '%' + @Source + '%')
+        AND (@AccountID IS NULL OR l.AccountID = @AccountID)
+    ORDER BY 
+        l.LogDate DESC;
+END
+GO
+
+-- Stored procedure to get activity logs
+CREATE PROCEDURE app.sp_GetActivityLogs
+    @StartDate DATETIME = NULL,
+    @EndDate DATETIME = NULL,
+    @ActivityType NVARCHAR(50) = NULL,
+    @EntityType NVARCHAR(50) = NULL,
+    @AccountID INT = NULL,
+    @MaxRows INT = 1000
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT TOP (@MaxRows)
+        al.ActivityID,
+        al.ActivityType,
+        al.EntityType,
+        al.EntityID,
+        al.Description,
+        al.OldValue,
+        al.NewValue,
+        al.IPAddress,
+        al.ActivityDate,
+        al.AccountID,
+        a.Username,
+        e.FullName AS EmployeeName
+    FROM 
+        app.ActivityLog al
+    INNER JOIN 
+        app.Account a ON al.AccountID = a.AccountID
+    LEFT JOIN 
+        app.Employee e ON a.AccountID = e.AccountID
+    WHERE 
+        (@StartDate IS NULL OR al.ActivityDate >= @StartDate)
+        AND (@EndDate IS NULL OR al.ActivityDate <= @EndDate)
+        AND (@ActivityType IS NULL OR al.ActivityType = @ActivityType)
+        AND (@EntityType IS NULL OR al.EntityType = @EntityType)
+        AND (@AccountID IS NULL OR al.AccountID = @AccountID)
+    ORDER BY 
+        al.ActivityDate DESC;
+END
+GO
+
+-- Stored procedure to create database backup
+CREATE PROCEDURE app.sp_CreateDatabaseBackup
+    @BackupPath NVARCHAR(255),
+    @BackupName NVARCHAR(100) = NULL,
+    @AccountID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Generate backup name if not provided
+    IF @BackupName IS NULL
+    BEGIN
+        SET @BackupName = 'QuanLyCuaHangTienLoi_' + FORMAT(GETDATE(), 'yyyyMMdd_HHmmss');
+    END
+    
+    -- Ensure backup path ends with a backslash
+    IF RIGHT(@BackupPath, 1) <> '\'
+    BEGIN
+        SET @BackupPath = @BackupPath + '\';
+    END
+    
+    -- Full backup path
+    DECLARE @FullBackupPath NVARCHAR(500) = @BackupPath + @BackupName + '.bak';
+    
+    -- Create backup
+    DECLARE @SQL NVARCHAR(1000) = 'BACKUP DATABASE [QuanLyCuaHangTienLoi] TO DISK = ''' + @FullBackupPath + ''' WITH COMPRESSION, STATS = 10';
+    
+    BEGIN TRY
+        EXEC sp_executesql @SQL;
+        
+        -- Get backup size
+        DECLARE @BackupSize BIGINT;
+        SELECT @BackupSize = size FROM sys.master_files WHERE name = 'QuanLyCuaHangTienLoi';
+        
+        -- Record backup
+        INSERT INTO app.Backup (
+            BackupName, BackupPath, BackupSize, BackupDate, AccountID, Status
+        )
+        VALUES (
+            @BackupName, @FullBackupPath, @BackupSize, GETDATE(), @AccountID, 'Success'
+        );
+        
+        -- Log the activity
+        INSERT INTO app.ActivityLog (
+            AccountID, ActivityType, EntityType, EntityID, Description
+        )
+        VALUES (
+            @AccountID, 'Backup', 'Database', 
+            SCOPE_IDENTITY(), 
+            'Created database backup: ' + @BackupName
+        );
+        
+        -- Return success
+        SELECT 'Database backup created successfully at: ' + @FullBackupPath AS Result;
+    END TRY
+    BEGIN CATCH
+        -- Record failed backup
+        INSERT INTO app.Backup (
+            BackupName, BackupPath, BackupDate, AccountID, Status, Note
+        )
+        VALUES (
+            @BackupName, @FullBackupPath, GETDATE(), @AccountID, 'Failed', ERROR_MESSAGE()
+        );
+        
+        -- Log the error
+        EXEC app.sp_LogSystemEvent 
+            @LogLevel = 'Error',
+            @Message = 'Database backup failed',
+            @Source = 'sp_CreateDatabaseBackup',
+            @Exception = ERROR_MESSAGE(),
+            @AccountID = @AccountID;
+        
+        -- Return error
+        SELECT 'Database backup failed: ' + ERROR_MESSAGE() AS Result;
+    END CATCH
+END
+GO
+
+PRINT 'System configuration stored procedures created successfully';
+
+--- File: 21_CreateDatabaseTriggers.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Trigger to update product price history when product price changes
+CREATE TRIGGER app.trg_Product_PriceHistory
+ON app.Product
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if cost price or sell price has changed
+    IF UPDATE(CostPrice) OR UPDATE(SellPrice)
+    BEGIN
+        -- Get the updated products with price changes
+        INSERT INTO app.ProductPrice (
+            ProductID, CostPrice, SellPrice, EffectiveDate
+        )
+        SELECT 
+            i.ProductID, 
+            i.CostPrice, 
+            i.SellPrice, 
+            GETDATE()
+        FROM 
+            inserted i
+        INNER JOIN 
+            deleted d ON i.ProductID = d.ProductID
+        WHERE 
+            i.CostPrice <> d.CostPrice OR i.SellPrice <> d.SellPrice;
+        
+        -- End the previous price periods
+        UPDATE pp
+        SET EndDate = GETDATE()
+        FROM app.ProductPrice pp
+        INNER JOIN inserted i ON pp.ProductID = i.ProductID
+        INNER JOIN deleted d ON i.ProductID = d.ProductID
+        WHERE 
+            pp.EndDate IS NULL
+            AND (i.CostPrice <> d.CostPrice OR i.SellPrice <> d.SellPrice)
+            AND pp.EffectiveDate < GETDATE();
+    END
+END
+GO
+
+-- Trigger to update inventory when order is placed
+CREATE TRIGGER app.trg_OrderDetail_UpdateInventory
+ON app.OrderDetail
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Update inventory for each product in the order
+    UPDATE i
+    SET 
+        i.Quantity = i.Quantity - od.Quantity,
+        i.LastUpdated = GETDATE()
+    FROM 
+        app.Inventory i
+    INNER JOIN 
+        inserted od ON i.ProductID = od.ProductID;
+    
+    -- Record inventory transactions
+    INSERT INTO app.InventoryTransaction (
+        ProductID, TransactionType, Quantity, PreviousQuantity, 
+        CurrentQuantity, UnitPrice, TotalAmount, 
+        ReferenceID, ReferenceType, TransactionDate
+    )
+    SELECT 
+        od.ProductID, 
+        'Sale', 
+        od.Quantity, 
+        i.Quantity + od.Quantity, 
+        i.Quantity, 
+        od.UnitPrice, 
+        od.TotalPrice, 
+        od.OrderID, 
+        'Order', 
+        GETDATE()
+    FROM 
+        inserted od
+    INNER JOIN 
+        app.Inventory i ON od.ProductID = i.ProductID;
+END
+GO
+
+-- Trigger to update inventory when order is cancelled
+CREATE TRIGGER app.trg_Order_CancelUpdateInventory
+ON app.Order
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if order status changed to Cancelled
+    IF EXISTS (
+        SELECT 1 
+        FROM inserted i 
+        INNER JOIN deleted d ON i.OrderID = d.OrderID
+        WHERE i.PaymentStatus = 'Cancelled' AND d.PaymentStatus <> 'Cancelled'
+    )
+    BEGIN
+        -- Get the cancelled orders
+        DECLARE @CancelledOrders TABLE (OrderID INT);
+        
+        INSERT INTO @CancelledOrders
+        SELECT i.OrderID
+        FROM inserted i
+        INNER JOIN deleted d ON i.OrderID = d.OrderID
+        WHERE i.PaymentStatus = 'Cancelled' AND d.PaymentStatus <> 'Cancelled';
+        
+        -- Update inventory for each product in the cancelled orders
+        UPDATE i
+        SET 
+            i.Quantity = i.Quantity + od.Quantity,
+            i.LastUpdated = GETDATE()
+        FROM 
+            app.Inventory i
+        INNER JOIN 
+            app.OrderDetail od ON i.ProductID = od.ProductID
+        INNER JOIN 
+            @CancelledOrders co ON od.OrderID = co.OrderID;
+        
+        -- Record inventory transactions
+        INSERT INTO app.InventoryTransaction (
+            ProductID, TransactionType, Quantity, PreviousQuantity, 
+            CurrentQuantity, UnitPrice, TotalAmount, 
+            ReferenceID, ReferenceType, Note, TransactionDate
+        )
+        SELECT 
+            od.ProductID, 
+            'Return', 
+            od.Quantity, 
+            i.Quantity - od.Quantity, 
+            i.Quantity, 
+            od.UnitPrice, 
+            od.TotalPrice, 
+            od.OrderID, 
+            'OrderCancel', 
+            'Order cancelled', 
+            GETDATE()
+        FROM 
+            app.OrderDetail od
+        INNER JOIN 
+            @CancelledOrders co ON od.OrderID = co.OrderID
+        INNER JOIN 
+            app.Inventory i ON od.ProductID = i.ProductID;
+    END
+END
+GO
+
+-- Trigger to update inventory when import detail is inserted
+CREATE TRIGGER app.trg_ImportDetail_UpdateInventory
+ON app.ImportDetail
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Update inventory for each product in the import
+    MERGE app.Inventory AS target
+    USING (
+        SELECT 
+            id.ProductID, 
+            id.Quantity
+        FROM 
+            inserted id
+    ) AS source
+    ON target.ProductID = source.ProductID
+    WHEN MATCHED THEN
+        UPDATE SET 
+            Quantity = target.Quantity + source.Quantity,
+            LastUpdated = GETDATE()
+    WHEN NOT MATCHED THEN
+        INSERT (ProductID, Quantity, LastUpdated)
+        VALUES (source.ProductID, source.Quantity, GETDATE());
+    
+    -- Record inventory transactions
+    INSERT INTO app.InventoryTransaction (
+        ProductID, TransactionType, Quantity, PreviousQuantity, 
+        CurrentQuantity, UnitPrice, TotalAmount, 
+        ReferenceID, ReferenceType, TransactionDate
+    )
+    SELECT 
+        id.ProductID, 
+        'Import', 
+        id.Quantity, 
+        ISNULL(i.Quantity - id.Quantity, 0), 
+        ISNULL(i.Quantity, id.Quantity), 
+        id.UnitPrice, 
+        id.TotalPrice, 
+        id.ImportID, 
+        'Import', 
+        GETDATE()
+    FROM 
+        inserted id
+    LEFT JOIN 
+        app.Inventory i ON id.ProductID = i.ProductID;
+END
+GO
+
+-- Trigger to update order totals when order details change
+CREATE TRIGGER app.trg_OrderDetail_UpdateOrderTotals
+ON app.OrderDetail
+AFTER INSERT, UPDATE, DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get the affected order IDs
+    DECLARE @AffectedOrders TABLE (OrderID INT);
+    
+    INSERT INTO @AffectedOrders
+    SELECT OrderID FROM inserted
+    UNION
+    SELECT OrderID FROM deleted;
+    
+    -- Update order totals
+    UPDATE o
+    SET 
+        o.TotalAmount = ISNULL(subquery.TotalAmount, 0),
+        o.FinalAmount = ISNULL(subquery.TotalAmount, 0) + o.Tax - o.Discount,
+        o.ModifiedDate = GETDATE()
+    FROM 
+        app.Order o
+    INNER JOIN (
+        SELECT 
+            OrderID, 
+            SUM(TotalPrice) AS TotalAmount
+        FROM 
+            app.OrderDetail
+        WHERE 
+            OrderID IN (SELECT OrderID FROM @AffectedOrders)
+        GROUP BY 
+            OrderID
+    ) AS subquery ON o.OrderID = subquery.OrderID;
+END
+GO
+
+-- Trigger to update import totals when import details change
+CREATE TRIGGER app.trg_ImportDetail_UpdateImportTotals
+ON app.ImportDetail
+AFTER INSERT, UPDATE, DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get the affected import IDs
+    DECLARE @AffectedImports TABLE (ImportID INT);
+    
+    INSERT INTO @AffectedImports
+    SELECT ImportID FROM inserted
+    UNION
+    SELECT ImportID FROM deleted;
+    
+    -- Update import totals
+    UPDATE i
+    SET 
+        i.TotalAmount = ISNULL(subquery.TotalAmount, 0),
+        i.ModifiedDate = GETDATE()
+    FROM 
+        app.Import i
+    INNER JOIN (
+        SELECT 
+            ImportID, 
+            SUM(TotalPrice) AS TotalAmount
+        FROM 
+            app.ImportDetail
+        WHERE 
+            ImportID IN (SELECT ImportID FROM @AffectedImports)
+        GROUP BY 
+            ImportID
+    ) AS subquery ON i.ImportID = subquery.ImportID;
+END
+GO
+
+-- Trigger to update daily sales when order is placed or cancelled
+CREATE TRIGGER app.trg_Order_UpdateDailySales
+ON app.Order
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get the affected dates
+    DECLARE @AffectedDates TABLE (SalesDate DATE);
+    
+    INSERT INTO @AffectedDates
+    SELECT DISTINCT CAST(OrderDate AS DATE) FROM inserted
+    UNION
+    SELECT DISTINCT CAST(OrderDate AS DATE) FROM deleted
+    WHERE PaymentStatus <> 'Cancelled';
+    
+    -- For each affected date, recalculate daily sales
+    DECLARE @SalesDate DATE;
+    DECLARE date_cursor CURSOR FOR
+    SELECT SalesDate FROM @AffectedDates;
+    
+    OPEN date_cursor;
+    FETCH NEXT FROM date_cursor INTO @SalesDate;
+    
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Calculate sales totals for the date
+        DECLARE @OrderCount INT, @TotalSales DECIMAL(18, 2), @TotalCost DECIMAL(18, 2);
+        
+        SELECT 
+            @OrderCount = COUNT(DISTINCT o.OrderID),
+            @TotalSales = SUM(o.FinalAmount)
+        FROM 
+            app.Order o
+        WHERE 
+            CAST(o.OrderDate AS DATE) = @SalesDate
+            AND o.PaymentStatus = 'Paid';
+        
+        SELECT 
+            @TotalCost = SUM(od.Quantity * p.CostPrice)
+        FROM 
+            app.OrderDetail od
+        INNER JOIN 
+            app.Order o ON od.OrderID = o.OrderID
+        INNER JOIN 
+            app.Product p ON od.ProductID = p.ProductID
+        WHERE 
+            CAST(o.OrderDate AS DATE) = @SalesDate
+            AND o.PaymentStatus = 'Paid';
+        
+        -- If no sales for the date, set defaults
+        SET @OrderCount = ISNULL(@OrderCount, 0);
+        SET @TotalSales = ISNULL(@TotalSales, 0);
+        SET @TotalCost = ISNULL(@TotalCost, 0);
+        
+        -- Update or insert daily sales record
+        MERGE app.DailySales AS target
+        USING (SELECT @SalesDate AS SalesDate) AS source
+        ON target.SalesDate = source.SalesDate
+        WHEN MATCHED THEN
+            UPDATE SET 
+                TotalOrders = @OrderCount,
+                TotalSales = @TotalSales,
+                TotalCost = @TotalCost,
+                GrossProfit = @TotalSales - @TotalCost,
+                UpdatedDate = GETDATE()
+        WHEN NOT MATCHED THEN
+            INSERT (SalesDate, TotalOrders, TotalSales, TotalCost, GrossProfit, CreatedDate)
+            VALUES (@SalesDate, @OrderCount, @TotalSales, @TotalCost, @TotalSales - @TotalCost, GETDATE());
+        
+        FETCH NEXT FROM date_cursor INTO @SalesDate;
+    END
+    
+    CLOSE date_cursor;
+    DEALLOCATE date_cursor;
+END
+GO
+
+-- Trigger to update product sales when order is placed or cancelled
+CREATE TRIGGER app.trg_OrderDetail_UpdateProductSales
+ON app.OrderDetail
+AFTER INSERT, UPDATE, DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get the affected order IDs
+    DECLARE @AffectedOrders TABLE (OrderID INT);
+    
+    INSERT INTO @AffectedOrders
+    SELECT OrderID FROM inserted
+    UNION
+    SELECT OrderID FROM deleted;
+    
+    -- Get the affected products and dates
+    DECLARE @AffectedProductDates TABLE (
+        ProductID INT,
+        SalesDate DATE
+    );
+    
+    INSERT INTO @AffectedProductDates
+    SELECT 
+        od.ProductID,
+        CAST(o.OrderDate AS DATE) AS SalesDate
+    FROM 
+        app.OrderDetail od
+    INNER JOIN 
+        app.Order o ON od.OrderID = o.OrderID
+    WHERE 
+        o.OrderID IN (SELECT OrderID FROM @AffectedOrders);
+    
+    -- For each affected product and date, recalculate product sales
+    MERGE app.ProductSales AS target
+    USING (
+        SELECT 
+            pd.ProductID,
+            pd.SalesDate,
+            COUNT(DISTINCT o.OrderID) AS OrderCount,
+            SUM(od.Quantity) AS QuantitySold,
+            SUM(od.TotalPrice) AS TotalSales,
+            SUM(od.Quantity * p.CostPrice) AS TotalCost,
+            SUM(od.TotalPrice) - SUM(od.Quantity * p.CostPrice) AS Profit
+        FROM 
+            @AffectedProductDates pd
+        INNER JOIN 
+            app.Order o ON CAST(o.OrderDate AS DATE) = pd.SalesDate
+        INNER JOIN 
+            app.OrderDetail od ON o.OrderID = od.OrderID AND od.ProductID = pd.ProductID
+        INNER JOIN 
+            app.Product p ON od.ProductID = p.ProductID
+        WHERE 
+            o.PaymentStatus = 'Paid'
+        GROUP BY 
+            pd.ProductID, pd.SalesDate
+    ) AS source
+    ON target.ProductID = source.ProductID AND target.SalesDate = source.SalesDate
+    WHEN MATCHED THEN
+        UPDATE SET 
+            QuantitySold = source.QuantitySold,
+            TotalSales = source.TotalSales,
+            TotalCost = source.TotalCost,
+            Profit = source.Profit,
+            UpdatedDate = GETDATE()
+    WHEN NOT MATCHED THEN
+        INSERT (ProductID, SalesDate, QuantitySold, TotalSales, TotalCost, Profit, CreatedDate)
+        VALUES (source.ProductID, source.SalesDate, source.QuantitySold, source.TotalSales, source.TotalCost, source.Profit, GETDATE());
+END
+GO
+
+PRINT 'Database triggers created successfully';
+
+--- File: 22_CreateDatabaseIndexes.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Indexes for Account table
+CREATE NONCLUSTERED INDEX IX_Account_Username ON app.Account(Username);
+CREATE NONCLUSTERED INDEX IX_Account_RoleID ON app.Account(RoleID);
+CREATE NONCLUSTERED INDEX IX_Account_IsActive ON app.Account(IsActive);
+
+-- Indexes for Employee table
+CREATE NONCLUSTERED INDEX IX_Employee_FullName ON app.Employee(FullName);
+CREATE NONCLUSTERED INDEX IX_Employee_PhoneNumber ON app.Employee(PhoneNumber);
+CREATE NONCLUSTERED INDEX IX_Employee_AccountID ON app.Employee(AccountID);
+CREATE NONCLUSTERED INDEX IX_Employee_IsActive ON app.Employee(IsActive);
+
+-- Indexes for Product table
+CREATE NONCLUSTERED INDEX IX_Product_ProductCode ON app.Product(ProductCode);
+CREATE NONCLUSTERED INDEX IX_Product_Barcode ON app.Product(Barcode);
+CREATE NONCLUSTERED INDEX IX_Product_ProductName ON app.Product(ProductName);
+CREATE NONCLUSTERED INDEX IX_Product_CategoryID ON app.Product(CategoryID);
+CREATE NONCLUSTERED INDEX IX_Product_IsActive ON app.Product(IsActive);
+
+-- Indexes for Category table
+CREATE NONCLUSTERED INDEX IX_Category_CategoryName ON app.Category(CategoryName);
+CREATE NONCLUSTERED INDEX IX_Category_ParentCategoryID ON app.Category(ParentCategoryID);
+CREATE NONCLUSTERED INDEX IX_Category_IsActive ON app.Category(IsActive);
+
+-- Indexes for Inventory table
+CREATE NONCLUSTERED INDEX IX_Inventory_Quantity ON app.Inventory(Quantity);
+CREATE NONCLUSTERED INDEX IX_Inventory_LastUpdated ON app.Inventory(LastUpdated);
+
+-- Indexes for Order table
+CREATE NONCLUSTERED INDEX IX_Order_OrderCode ON app.Order(OrderCode);
+CREATE NONCLUSTERED INDEX IX_Order_OrderDate ON app.Order(OrderDate);
+CREATE NONCLUSTERED INDEX IX_Order_CustomerID ON app.Order(CustomerID);
+CREATE NONCLUSTERED INDEX IX_Order_EmployeeID ON app.Order(EmployeeID);
+CREATE NONCLUSTERED INDEX IX_Order_PaymentMethodID ON app.Order(PaymentMethodID);
+CREATE NONCLUSTERED INDEX IX_Order_PaymentStatus ON app.Order(PaymentStatus);
+
+-- Indexes for OrderDetail table
+CREATE NONCLUSTERED INDEX IX_OrderDetail_OrderID ON app.OrderDetail(OrderID);
+CREATE NONCLUSTERED INDEX IX_OrderDetail_ProductID ON app.OrderDetail(ProductID);
+CREATE NONCLUSTERED INDEX IX_OrderDetail_OrderID_ProductID ON app.OrderDetail(OrderID, ProductID);
+
+-- Indexes for Customer table
+CREATE NONCLUSTERED INDEX IX_Customer_CustomerName ON app.Customer(CustomerName);
+CREATE NONCLUSTERED INDEX IX_Customer_PhoneNumber ON app.Customer(PhoneNumber);
+CREATE NONCLUSTERED INDEX IX_Customer_MembershipLevel ON app.Customer(MembershipLevel);
+
+-- Indexes for Supplier table
+CREATE NONCLUSTERED INDEX IX_Supplier_SupplierName ON app.Supplier(SupplierName);
+CREATE NONCLUSTERED INDEX IX_Supplier_PhoneNumber ON app.Supplier(PhoneNumber);
+CREATE NONCLUSTERED INDEX IX_Supplier_IsActive ON app.Supplier(IsActive);
+
+-- Indexes for Import table
+CREATE NONCLUSTERED INDEX IX_Import_ImportCode ON app.Import(ImportCode);
+CREATE NONCLUSTERED INDEX IX_Import_ImportDate ON app.Import(ImportDate);
+CREATE NONCLUSTERED INDEX IX_Import_SupplierID ON app.Import(SupplierID);
+CREATE NONCLUSTERED INDEX IX_Import_Status ON app.Import(Status);
+
+-- Indexes for ImportDetail table
+CREATE NONCLUSTERED INDEX IX_ImportDetail_ImportID ON app.ImportDetail(ImportID);
+CREATE NONCLUSTERED INDEX IX_ImportDetail_ProductID ON app.ImportDetail(ProductID);
+CREATE NONCLUSTERED INDEX IX_ImportDetail_ImportID_ProductID ON app.ImportDetail(ImportID, ProductID);
+
+-- Indexes for InventoryTransaction table
+CREATE NONCLUSTERED INDEX IX_InventoryTransaction_ProductID ON app.InventoryTransaction(ProductID);
+CREATE NONCLUSTERED INDEX IX_InventoryTransaction_TransactionDate ON app.InventoryTransaction(TransactionDate);
+CREATE NONCLUSTERED INDEX IX_InventoryTransaction_TransactionType ON app.InventoryTransaction(TransactionType);
+CREATE NONCLUSTERED INDEX IX_InventoryTransaction_ReferenceID ON app.InventoryTransaction(ReferenceID);
+CREATE NONCLUSTERED INDEX IX_InventoryTransaction_ReferenceType ON app.InventoryTransaction(ReferenceType);
+
+-- Indexes for Expense table
+CREATE NONCLUSTERED INDEX IX_Expense_ExpenseTypeID ON app.Expense(ExpenseTypeID);
+CREATE NONCLUSTERED INDEX IX_Expense_ExpenseDate ON app.Expense(ExpenseDate);
+CREATE NONCLUSTERED INDEX IX_Expense_EmployeeID ON app.Expense(EmployeeID);
+
+-- Indexes for DailySales table
+CREATE NONCLUSTERED INDEX IX_DailySales_SalesDate ON app.DailySales(SalesDate);
+
+-- Indexes for ProductSales table
+CREATE NONCLUSTERED INDEX IX_ProductSales_ProductID ON app.ProductSales(ProductID);
+CREATE NONCLUSTERED INDEX IX_ProductSales_SalesDate ON app.ProductSales(SalesDate);
+CREATE NONCLUSTERED INDEX IX_ProductSales_ProductID_SalesDate ON app.ProductSales(ProductID, SalesDate);
+
+-- Indexes for CategorySales table
+CREATE NONCLUSTERED INDEX IX_CategorySales_CategoryID ON app.CategorySales(CategoryID);
+CREATE NONCLUSTERED INDEX IX_CategorySales_SalesDate ON app.CategorySales(SalesDate);
+CREATE NONCLUSTERED INDEX IX_CategorySales_CategoryID_SalesDate ON app.CategorySales(CategoryID, SalesDate);
+
+-- Indexes for SystemLog table
+CREATE NONCLUSTERED INDEX IX_SystemLog_LogLevel ON app.SystemLog(LogLevel);
+CREATE NONCLUSTERED INDEX IX_SystemLog_LogDate ON app.SystemLog(LogDate);
+CREATE NONCLUSTERED INDEX IX_SystemLog_AccountID ON app.SystemLog(AccountID);
+
+-- Indexes for ActivityLog table
+CREATE NONCLUSTERED INDEX IX_ActivityLog_AccountID ON app.ActivityLog(AccountID);
+CREATE NONCLUSTERED INDEX IX_ActivityLog_ActivityDate ON app.ActivityLog(ActivityDate);
+CREATE NONCLUSTERED INDEX IX_ActivityLog_ActivityType ON app.ActivityLog(ActivityType);
+CREATE NONCLUSTERED INDEX IX_ActivityLog_EntityType ON app.ActivityLog(EntityType);
+CREATE NONCLUSTERED INDEX IX_ActivityLog_EntityID ON app.ActivityLog(EntityID);
+
+-- Indexes for SystemConfig table
+CREATE NONCLUSTERED INDEX IX_SystemConfig_ConfigKey ON app.SystemConfig(ConfigKey);
+
+PRINT 'Database indexes created successfully';
+
+--- File: 23_BackupRestoreProcedures.sql ---
+USE QuanLyCuaHangTienLoi;
+GO
+
+-- Stored procedure to create full database backup
+CREATE PROCEDURE app.sp_CreateFullBackup
+    @BackupPath NVARCHAR(255),
+    @BackupName NVARCHAR(100) = NULL,
+    @AccountID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Generate backup name if not provided
+    IF @BackupName IS NULL
+    BEGIN
+        SET @BackupName = 'QuanLyCuaHangTienLoi_Full_' + FORMAT(GETDATE(), 'yyyyMMdd_HHmmss');
+    END
+    
+    -- Ensure backup path ends with a backslash
+    IF RIGHT(@BackupPath, 1) <> '\'
+    BEGIN
+        SET @BackupPath = @BackupPath + '\';
+    END
+    
+    -- Full backup path
+    DECLARE @FullBackupPath NVARCHAR(500) = @BackupPath + @BackupName + '.bak';
+    
+    -- Create backup
+    DECLARE @SQL NVARCHAR(1000) = 'BACKUP DATABASE [QuanLyCuaHangTienLoi] TO DISK = ''' + @FullBackupPath + ''' WITH COMPRESSION, STATS = 10';
+    
+    BEGIN TRY
+        EXEC sp_executesql @SQL;
+        
+        -- Get backup size
+        DECLARE @BackupSize BIGINT;
+        SELECT @BackupSize = size FROM sys.master_files WHERE name = 'QuanLyCuaHangTienLoi';
+        
+        -- Record backup
+        INSERT INTO app.Backup (
+            BackupName, BackupPath, BackupSize, BackupDate, AccountID, Status, Note
+        )
+        VALUES (
+            @BackupName, @FullBackupPath, @BackupSize, GETDATE(), @AccountID, 'Success', 'Full backup'
+        );
+        
+        -- Log the activity
+        INSERT INTO app.ActivityLog (
+            AccountID, ActivityType, EntityType, EntityID, Description
+        )
+        VALUES (
+            @AccountID, 'Backup', 'Database', 
+            SCOPE_IDENTITY(), 
+            'Created full database backup: ' + @BackupName
+        );
+        
+        -- Return success
+        SELECT 'Full database backup created successfully at: ' + @FullBackupPath AS Result;
+    END TRY
+    BEGIN CATCH
+        -- Record failed backup
+        INSERT INTO app.Backup (
+            BackupName, BackupPath, BackupDate, AccountID, Status, Note
+        )
+        VALUES (
+            @BackupName, @FullBackupPath, GETDATE(), @AccountID, 'Failed', 'Full backup failed: ' + ERROR_MESSAGE()
+        );
+        
+        -- Log the error
+        EXEC app.sp_LogSystemEvent 
+            @LogLevel = 'Error',
+            @Message = 'Full database backup failed',
+            @Source = 'sp_CreateFullBackup',
+            @Exception = ERROR_MESSAGE(),
+            @AccountID = @AccountID;
+        
+        -- Return error
+        SELECT 'Full database backup failed: ' + ERROR_MESSAGE() AS Result;
+    END CATCH
+END
+GO
+
+-- Stored procedure to create differential database backup
+CREATE PROCEDURE app.sp_CreateDifferentialBackup
+    @BackupPath NVARCHAR(255),
+    @BackupName NVARCHAR(100) = NULL,
+    @AccountID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Generate backup name if not provided
+    IF @BackupName IS NULL
+    BEGIN
+        SET @BackupName = 'QuanLyCuaHangTienLoi_Diff_' + FORMAT(GETDATE(), 'yyyyMMdd_HHmmss');
+    END
+    
+    -- Ensure backup path ends with a backslash
+    IF RIGHT(@BackupPath, 1) <> '\'
+    BEGIN
+        SET @BackupPath = @BackupPath + '\';
+    END
+    
+    -- Full backup path
+    DECLARE @FullBackupPath NVARCHAR(500) = @BackupPath + @BackupName + '.bak';
+    
+    -- Create differential backup
+    DECLARE @SQL NVARCHAR(1000) = 'BACKUP DATABASE [QuanLyCuaHangTienLoi] TO DISK = ''' + @FullBackupPath + ''' WITH DIFFERENTIAL, COMPRESSION, STATS = 10';
+    
+    BEGIN TRY
+        EXEC sp_executesql @SQL;
+        
+        -- Get backup size
+        DECLARE @BackupSize BIGINT;
+        SELECT @BackupSize = size FROM sys.master_files WHERE name = 'QuanLyCuaHangTienLoi';
+        
+        -- Record backup
+        INSERT INTO app.Backup (
+            BackupName, BackupPath, BackupSize, BackupDate, AccountID, Status, Note
+        )
+        VALUES (
+            @BackupName, @FullBackupPath, @BackupSize, GETDATE(), @AccountID, 'Success', 'Differential backup'
+        );
+        
+        -- Log the activity
+        INSERT INTO app.ActivityLog (
+            AccountID, ActivityType, EntityType, EntityID, Description
+        )
+        VALUES (
+            @AccountID, 'Backup', 'Database', 
+            SCOPE_IDENTITY(), 
+            'Created differential database backup: ' + @BackupName
+        );
+        
+        -- Return success
+        SELECT 'Differential database backup created successfully at: ' + @FullBackupPath AS Result;
+    END TRY
+    BEGIN CATCH
+        -- Record failed backup
+        INSERT INTO app.Backup (
+            BackupName, BackupPath, BackupDate, AccountID, Status, Note
+        )
+        VALUES (
+            @BackupName, @FullBackupPath, GETDATE(), @AccountID, 'Failed', 'Differential backup failed: ' + ERROR_MESSAGE()
+        );
+        
+        -- Log the error
+        EXEC app.sp_LogSystemEvent 
+            @LogLevel = 'Error',
+            @Message = 'Differential database backup failed',
+            @Source = 'sp_CreateDifferentialBackup',
+            @Exception = ERROR_MESSAGE(),
+            @AccountID = @AccountID;
+        
+        -- Return error
+        SELECT 'Differential database backup failed: ' + ERROR_MESSAGE() AS Result;
+    END CATCH
+END
+GO
+
+-- Stored procedure to create transaction log backup
+CREATE PROCEDURE app.sp_CreateLogBackup
+    @BackupPath NVARCHAR(255),
+    @BackupName NVARCHAR(100) = NULL,
+    @AccountID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Generate backup name if not provided
+    IF @BackupName IS NULL
+    BEGIN
+        SET @BackupName = 'QuanLyCuaHangTienLoi_Log_' + FORMAT(GETDATE(), 'yyyyMMdd_HHmmss');
+    END
+    
+    -- Ensure backup path ends with a backslash
+    IF RIGHT(@BackupPath, 1) <> '\'
+    BEGIN
+        SET @BackupPath = @BackupPath + '\';
+    END
+    
+    -- Full backup path
+    DECLARE @FullBackupPath NVARCHAR(500) = @BackupPath + @BackupName + '.trn';
+    
+    -- Create log backup
+    DECLARE @SQL NVARCHAR(1000) = 'BACKUP LOG [QuanLyCuaHangTienLoi] TO DISK = ''' + @FullBackupPath + ''' WITH COMPRESSION, STATS = 10';
+    
+    BEGIN TRY
+        EXEC sp_executesql @SQL;
+        
+        -- Get backup size (approximate)
+        DECLARE @BackupSize BIGINT;
+        SELECT @BackupSize = size FROM sys.master_files WHERE name = 'QuanLyCuaHangTienLoi_log';
+        
+        -- Record backup
+        INSERT INTO app.Backup (
+            BackupName, BackupPath, BackupSize, BackupDate, AccountID, Status, Note
+        )
+        VALUES (
+            @BackupName, @FullBackupPath, @BackupSize, GETDATE(), @AccountID, 'Success', 'Transaction log backup'
+        );
+        
+        -- Log the activity
+        INSERT INTO app.ActivityLog (
+            AccountID, ActivityType, EntityType, EntityID, Description
+        )
+        VALUES (
+            @AccountID, 'Backup', 'Database', 
+            SCOPE_IDENTITY(), 
+            'Created transaction log backup: ' + @BackupName
+        );
+        
+        -- Return success
+        SELECT 'Transaction log backup created successfully at: ' + @FullBackupPath AS Result;
+    END TRY
+    BEGIN CATCH
+        -- Record failed backup
+        INSERT INTO app.Backup (
+            BackupName, BackupPath, BackupDate, AccountID, Status, Note
+        )
+        VALUES (
+            @BackupName, @FullBackupPath, GETDATE(), @AccountID, 'Failed', 'Transaction log backup failed: ' + ERROR_MESSAGE()
+        );
+        
+        -- Log the error
+        EXEC app.sp_LogSystemEvent 
+            @LogLevel = 'Error',
+            @Message = 'Transaction log backup failed',
+            @Source = 'sp_CreateLogBackup',
+            @Exception = ERROR_MESSAGE(),
+            @AccountID = @AccountID;
+        
+        -- Return error
+        SELECT 'Transaction log backup failed: ' + ERROR_MESSAGE() AS Result;
+    END CATCH
+END
+GO
+
+-- Stored procedure to restore database from backup
+CREATE PROCEDURE app.sp_RestoreDatabase
+    @BackupPath NVARCHAR(500),
+    @DataFilePath NVARCHAR(500) = NULL,
+    @LogFilePath NVARCHAR(500) = NULL,
+    @AccountID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Default data and log file paths if not provided
+    IF @DataFilePath IS NULL
+    BEGIN
+        SELECT @DataFilePath = SUBSTRING(physical_name, 1, LEN(physical_name) - CHARINDEX('\', REVERSE(physical_name)) + 1)
+        FROM sys.master_files
+        WHERE database_id = DB_ID('QuanLyCuaHangTienLoi') AND type_desc = 'ROWS';
+    END
+    
+    IF @LogFilePath IS NULL
+    BEGIN
+        SELECT @LogFilePath = SUBSTRING(physical_name, 1, LEN(physical_name) - CHARINDEX('\', REVERSE(physical_name)) + 1)
+        FROM sys.master_files
+        WHERE database_id = DB_ID('QuanLyCuaHangTienLoi') AND type_desc = 'LOG';
+    END
+    
+    -- Ensure paths end with a backslash
+    IF RIGHT(@DataFilePath, 1) <> '\'
+    BEGIN
+        SET @DataFilePath = @DataFilePath + '\';
+    END
+    
+    IF RIGHT(@LogFilePath, 1) <> '\'
+    BEGIN
+        SET @LogFilePath = @LogFilePath + '\';
+    END
+    
+    -- Get logical file names from backup
+    DECLARE @LogicalDataName NVARCHAR(128), @LogicalLogName NVARCHAR(128);
+    DECLARE @FileListTable TABLE (
+        LogicalName NVARCHAR(128),
+        PhysicalName NVARCHAR(260),
+        Type CHAR(1),
+        FileGroupName NVARCHAR(128),
+        Size NUMERIC(20,0),
+        MaxSize NUMERIC(20,0),
+        FileID BIGINT,
+        CreateLSN NUMERIC(25,0),
+        DropLSN NUMERIC(25,0),
+        UniqueID UNIQUEIDENTIFIER,
+        ReadOnlyLSN NUMERIC(25,0),
+        ReadWriteLSN NUMERIC(25,0),
+        BackupSizeInBytes BIGINT,
+        SourceBlockSize INT,
+        FileGroupID INT,
+        LogGroupGUID UNIQUEIDENTIFIER,
+        DifferentialBaseLSN NUMERIC(25,0),
+        DifferentialBaseGUID UNIQUEIDENTIFIER,
+        IsReadOnly BIT,
+        IsPresent BIT,
+        TDEThumbprint VARBINARY(32)
+    );
+    
+    -- Get file list from backup
+    DECLARE @FileListSQL NVARCHAR(1000) = 'RESTORE FILELISTONLY FROM DISK = ''' + @BackupPath + '''';
+    
+    BEGIN TRY
+        INSERT INTO @FileListTable
+        EXEC sp_executesql @FileListSQL;
+        
+        -- Get logical file names
+        SELECT @LogicalDataName = LogicalName FROM @FileListTable WHERE Type = 'D';
+        SELECT @LogicalLogName = LogicalName FROM @FileListTable WHERE Type = 'L';
+        
+        -- Prepare restore command
+        DECLARE @RestoreSQL NVARCHAR(2000) = '
+        USE master;
+        ALTER DATABASE [QuanLyCuaHangTienLoi] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+        RESTORE DATABASE [QuanLyCuaHangTienLoi] FROM DISK = ''' + @BackupPath + '''
+        WITH REPLACE,
+        MOVE ''' + @LogicalDataName + ''' TO ''' + @DataFilePath + 'QuanLyCuaHangTienLoi.mdf'',
+        MOVE ''' + @LogicalLogName + ''' TO ''' + @LogFilePath + 'QuanLyCuaHangTienLoi_log.ldf'',
+        STATS = 10;
+        ALTER DATABASE [QuanLyCuaHangTienLoi] SET MULTI_USER;';
+        
+        -- Execute restore
+        EXEC sp_executesql @RestoreSQL;
+        
+        -- Record restore operation
+        INSERT INTO app.Backup (
+            BackupName, BackupPath, BackupDate, AccountID, Status, Note
+        )
+        VALUES (
+            'Restore_' + FORMAT(GETDATE(), 'yyyyMMdd_HHmmss'),
+            @BackupPath, 
+            GETDATE(), 
+            @AccountID, 
+            'Success', 
+            'Database restored from backup'
+        );
+        
+        -- Log the activity (this will be in the restored database)
+        INSERT INTO app.ActivityLog (
+            AccountID, ActivityType, EntityType, EntityID, Description
+        )
+        VALUES (
+            @AccountID, 'Restore', 'Database', 
+            SCOPE_IDENTITY(), 
+            'Restored database from backup: ' + @BackupPath
+        );
+        
+        -- Return success
+        SELECT 'Database restored successfully from: ' + @BackupPath AS Result;
+    END TRY
+    BEGIN CATCH
+        -- Log the error
+        EXEC app.sp_LogSystemEvent 
+            @LogLevel = 'Error',
+            @Message = 'Database restore failed',
+            @Source = 'sp_RestoreDatabase',
+            @Exception = ERROR_MESSAGE(),
+            @AccountID = @AccountID;
+        
+        -- Return error
+        SELECT 'Database restore failed: ' + ERROR_MESSAGE() AS Result;
+    END CATCH
+END
+GO
+
+-- Stored procedure to get backup history
+CREATE PROCEDURE app.sp_GetBackupHistory
+    @StartDate DATETIME = NULL,
+    @EndDate DATETIME = NULL,
+    @Status NVARCHAR(20) = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    SELECT 
+        b.BackupID,
+        b.BackupName,
+        b.BackupPath,
+        b.BackupSize,
+        b.BackupDate,
+        b.Status,
+        b.Note,
+        a.Username AS CreatedBy,
+        e.FullName AS EmployeeName
+    FROM 
+        app.Backup b
+    LEFT JOIN 
+        app.Account a ON b.AccountID = a.AccountID
+    LEFT JOIN 
+        app.Employee e ON a.AccountID = e.AccountID
+    WHERE 
+        (@StartDate IS NULL OR b.BackupDate >= @StartDate)
+        AND (@EndDate IS NULL OR b.BackupDate <= @EndDate)
+        AND (@Status IS NULL OR b.Status = @Status)
+    ORDER BY 
+        b.BackupDate DESC;
+END
+GO
+
+-- Stored procedure to delete old backups
+CREATE PROCEDURE app.sp_DeleteOldBackups
+    @DaysToKeep INT = 30,
+    @AccountID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Get list of backups to delete
+    DECLARE @BackupsToDelete TABLE (
+        BackupID INT,
+        BackupPath NVARCHAR(255),
+        BackupName NVARCHAR(100)
+    );
+    
+    INSERT INTO @BackupsToDelete
+    SELECT 
+        BackupID,
+        BackupPath,
+        BackupName
+    FROM 
+        app.Backup
+    WHERE 
+        BackupDate < DATEADD(DAY, -@DaysToKeep, GETDATE());
+    
+    -- Delete physical backup files
+    DECLARE @BackupPath NVARCHAR(255), @BackupName NVARCHAR(100), @BackupID INT;
+    DECLARE backup_cursor CURSOR FOR
+    SELECT BackupID, BackupPath, BackupName FROM @BackupsToDelete;
+    
+    OPEN backup_cursor;
+    FETCH NEXT FROM backup_cursor INTO @BackupID, @BackupPath, @BackupName;
+    
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Try to delete the physical file
+        DECLARE @DeleteSQL NVARCHAR(500) = 'EXEC master.dbo.xp_cmdshell ''del "' + @BackupPath + '" /F''';
+        
+        BEGIN TRY
+            EXEC sp_executesql @DeleteSQL;
+            
+            -- Update backup record
+            UPDATE app.Backup
+            SET Note = Note + ' | File deleted on ' + CONVERT(NVARCHAR, GETDATE(), 120)
+            WHERE BackupID = @BackupID;
+        END TRY
+        BEGIN CATCH
+            -- Log error but continue
+            EXEC app.sp_LogSystemEvent 
+                @LogLevel = 'Warning',
+                @Message = 'Failed to delete backup file',
+                @Source = 'sp_DeleteOldBackups',
+                @Exception = 'Failed to delete: ' + @BackupPath,
+                @AccountID = @AccountID;
+        END CATCH
+        
+        FETCH NEXT FROM backup_cursor INTO @BackupID, @BackupPath, @BackupName;
+    END
+    
+    CLOSE backup_cursor;
+    DEALLOCATE backup_cursor;
+    
+    -- Delete backup records from database
+    DELETE FROM app.Backup
+    WHERE BackupID IN (SELECT BackupID FROM @BackupsToDelete);
+    
+    -- Log the activity
+    INSERT INTO app.ActivityLog (
+        AccountID, ActivityType, EntityType, EntityID, Description
+    )
+    VALUES (
+        @AccountID, 'Maintenance', 'Backup', 
+        0, 
+        'Deleted ' + CAST((SELECT COUNT(*) FROM @BackupsToDelete) AS NVARCHAR) + ' old backups older than ' + CAST(@DaysToKeep AS NVARCHAR) + ' days'
+    );
+    
+    -- Return result
+    SELECT 'Deleted ' + CAST((SELECT COUNT(*) FROM @BackupsToDelete) AS NVARCHAR) + ' old backups' AS Result;
+END
+GO
+
+PRINT 'Backup and restore procedures created successfully';
+
+--- File: docs/.project_structure_ignore ---
+
+
+--- File: readme.md ---
+﻿# Hướng dẫn thiết lập cơ sở dữ liệu Quản lý cửa hàng tiện lợi
+
+## Giới thiệu
+
+Đây là bộ scripts SQL để tạo và cấu hình cơ sở dữ liệu cho ứng dụng Quản lý cửa hàng tiện lợi. Bộ scripts này bao gồm tất cả các bảng, stored procedures, views, triggers, và indexes cần thiết cho ứng dụng.
+
+## Yêu cầu hệ thống
+
+- SQL Server 2016 trở lên
+- Quyền sysadmin hoặc dbcreator để tạo cơ sở dữ liệu mới
+- Ít nhất 100MB dung lượng đĩa trống
+
+## Cách cài đặt
+
+### Phương pháp 1: Sử dụng Master Script
+
+1. Mở SQL Server Management Studio (SSMS)
+2. Kết nối đến SQL Server instance của bạn
+3. Mở file `00_MasterScript.sql`
+4. Thực thi script (nhấn F5 hoặc nút Execute)
+
+Master Script sẽ tự động thực thi tất cả các scripts theo đúng thứ tự.
+
+### Phương pháp 2: Thực thi từng script riêng lẻ
+
+Nếu bạn muốn thực thi từng script riêng lẻ, hãy thực hiện theo thứ tự sau:
+
+1. `01_CreateDatabase.sql` - Tạo cơ sở dữ liệu
+2. `02_CreateAccountTables.sql` - Tạo bảng tài khoản
+3. `03_CreateEmployeeTables.sql` - Tạo bảng nhân viên
+4. `04_CreateProductCategoryTables.sql` - Tạo bảng sản phẩm và danh mục
+5. `05_CreateSupplierInventoryTables.sql` - Tạo bảng nhà cung cấp và kho hàng
+6. `06_CreateOrderTables.sql` - Tạo bảng đơn hàng
+7. `07_CreateReportingTables.sql` - Tạo bảng báo cáo
+8. `08_CreateSystemTables.sql` - Tạo bảng hệ thống
+9. `09_StoredProcedures_Account.sql` - Tạo stored procedures quản lý tài khoản
+10. `10_StoredProcedures_Product.sql` - Tạo stored procedures quản lý sản phẩm
+11. `11_StoredProcedures_Order.sql` - Tạo stored procedures quản lý đơn hàng
+12. `12_StoredProcedures_Inventory.sql` - Tạo stored procedures quản lý kho hàng
+13. `13_StoredProcedures_Reporting.sql` - Tạo stored procedures báo cáo
+14. `14_StoredProcedures_Category.sql` - Tạo stored procedures quản lý danh mục
+15. `15_StoredProcedures_Supplier.sql` - Tạo stored procedures quản lý nhà cung cấp
+16. `16_CreateDatabaseViews.sql` - Tạo views
+17. `17_StoredProcedures_Employee.sql` - Tạo stored procedures quản lý nhân viên
+18. `18_StoredProcedures_Customer.sql` - Tạo stored procedures quản lý khách hàng
+19. `19_StoredProcedures_Expense.sql` - Tạo stored procedures quản lý chi phí
+20. `20_StoredProcedures_System.sql` - Tạo stored procedures cấu hình hệ thống
+21. `21_CreateDatabaseTriggers.sql` - Tạo triggers
+22. `22_CreateDatabaseIndexes.sql` - Tạo indexes
+23. `23_BackupRestoreProcedures.sql` - Tạo stored procedures sao lưu và phục hồi
+
+## Thông tin đăng nhập mặc định
+
+Sau khi cài đặt, bạn có thể đăng nhập vào hệ thống bằng tài khoản admin mặc định:
+
+- **Username**: admin
+- **Password**: Admin@123
+
+**Lưu ý**: Vì lý do bảo mật, hãy đổi mật khẩu admin ngay sau khi đăng nhập lần đầu.
+
+## Bảo trì cơ sở dữ liệu
+
+### Sao lưu cơ sở dữ liệu
+
+Để sao lưu cơ sở dữ liệu, sử dụng stored procedure sau:
+
+```sql
+EXEC app.sp_CreateFullBackup 
+    @BackupPath = 'C:\Backups', 
+    @BackupName = 'QuanLyCuaHangTienLoi_Backup', 
+    @AccountID = 1;
+```
+
+### Phục hồi cơ sở dữ liệu
+
+Để phục hồi cơ sở dữ liệu từ bản sao lưu, sử dụng stored procedure sau:
+
+```sql
+EXEC app.sp_RestoreDatabase 
+    @BackupPath = 'C:\Backups\QuanLyCuaHangTienLoi_Backup.bak', 
+    @AccountID = 1;
+```
+
+### Xóa bản sao lưu cũ
+
+Để xóa các bản sao lưu cũ (mặc định là các bản sao lưu cũ hơn 30 ngày):
+
+```sql
+EXEC app.sp_DeleteOldBackups 
+    @DaysToKeep = 30, 
+    @AccountID = 1;
+```
+
+## Cấu trúc cơ sở dữ liệu
+
+Cơ sở dữ liệu được tổ chức thành các nhóm bảng chính sau:
+
+1. **Quản lý tài khoản và nhân viên**: Role, Account, Employee
+2. **Quản lý sản phẩm**: Category, Product, ProductPrice, ProductImage
+3. **Quản lý kho hàng**: Inventory, InventoryTransaction, Import, ImportDetail
+4. **Quản lý đơn hàng**: Customer, Order, OrderDetail, PaymentMethod
+5. **Quản lý nhà cung cấp**: Supplier
+6. **Báo cáo và thống kê**: DailySales, ProductSales, CategorySales, Expense
+7. **Cấu hình hệ thống**: SystemConfig, SystemLog, ActivityLog, Backup
+
+## Hỗ trợ
+
+Nếu bạn gặp vấn đề trong quá trình cài đặt hoặc sử dụng cơ sở dữ liệu, vui lòng liên hệ với đội ngũ hỗ trợ kỹ thuật.
